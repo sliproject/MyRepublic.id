@@ -498,7 +498,6 @@
             *, .orb { animation: none !important; transition: none !important; }
         }
 
-        /* ── MENGAPA KAMI ── */
         .why { padding: 100px 0; background: var(--navy2); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
         .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 60px; }
         .why-card { padding: 32px 28px; border-radius: 16px; border: 1px solid var(--border-soft); background: var(--navy); transition: border-color 0.3s; }
@@ -506,8 +505,6 @@
         .why-icon { font-size: 32px; margin-bottom: 16px; }
         .why-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 10px; }
         .why-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.8; }
-
-        /* ── TESTIMONI ── */
         .testimonials { padding: 100px 0; }
         .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 60px; }
         .testi-card { background: var(--navy2); border: 1px solid var(--border-soft); border-radius: 16px; padding: 32px; transition: all 0.3s; }
@@ -518,8 +515,6 @@
         .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--accent-glow); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
         .testi-name { font-size: 14px; font-weight: 600; color: #fff; }
         .testi-role { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-
-        /* ── FAQ ── */
         .faq { padding: 100px 0; background: var(--navy2); border-top: 1px solid var(--border-soft); }
         .faq-list { max-width: 760px; margin: 60px auto 0; display: flex; flex-direction: column; gap: 12px; }
         .faq-item { background: var(--navy); border: 1px solid var(--border-soft); border-radius: 12px; overflow: hidden; }
@@ -527,17 +522,10 @@
         .faq-q:hover { color: var(--accent2); }
         .faq-arrow { font-size: 18px; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
         .faq-item.open .faq-arrow { transform: rotate(45deg); }
-        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
         .faq-item.open .faq-a { max-height: 200px; }
         .faq-a p { padding: 0 24px 20px; font-size: 14px; color: var(--text-muted); line-height: 1.8; }
-
-        /* ── LAYANAN EXPANDED ── */
-        .service-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-
-        @media (max-width: 768px) {
-            .why-grid { grid-template-columns: 1fr; }
-            .testi-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } .testi-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -647,7 +635,7 @@
                 <div class="service-card reveal">
                     <div class="card-icon">⚙️</div>
                     <h3>Otomatisasi Proses Bisnis</h3>
-                    <p>Otomatiskan alur kerja manual yang memakan waktu — approval dokumen, notifikasi internal, integrasi antar sistem, hingga laporan berkala secara otomatis.</p>
+                    <p>Otomatiskan alur kerja manual — approval dokumen, notifikasi internal, integrasi antar sistem, hingga laporan berkala secara otomatis.</p>
                     <span class="card-tag">Workflow · Integrasi · Efisiensi</span>
                 </div>
                 <div class="service-card reveal">
@@ -704,7 +692,7 @@
     <section class="why">
         <div class="container">
             <p class="section-label reveal">Keunggulan Kami</p>
-            <h2 class="section-title reveal">Mengapa memilih<br>SLi Project?</h2>
+            <h2 class="section-title reveal">Mengapa memilih SLi Project?</h2>
             <div class="why-grid">
                 <div class="why-card reveal">
                     <div class="why-icon">👨‍💻</div>
@@ -781,11 +769,11 @@
             <div class="faq-list">
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah bisa untuk bisnis skala kecil/UMKM? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Tentu! Kami melayani dari UMKM hingga korporat besar. Setiap solusi disesuaikan dengan skala dan budget bisnis Anda — tidak ada biaya yang dipaksakan.</p></div>
+                    <div class="faq-a"><p>Tentu! Kami melayani dari UMKM hingga korporat besar. Setiap solusi disesuaikan dengan skala dan budget bisnis Anda.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Berapa lama proses pengerjaan? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Tergantung kompleksitas proyek. Untuk chatbot dan otomatisasi sederhana bisa 3–7 hari. Untuk aplikasi atau sistem yang lebih kompleks biasanya 2–8 minggu dengan timeline yang jelas dari awal.</p></div>
+                    <div class="faq-a"><p>Tergantung kompleksitas proyek. Chatbot dan otomatisasi sederhana 3–7 hari. Aplikasi atau sistem kompleks biasanya 2–8 minggu dengan timeline jelas dari awal.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah ada dukungan setelah project selesai? <span class="faq-arrow">+</span></div>
@@ -793,7 +781,7 @@
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Platform apa saja yang bisa diintegrasikan? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Kami bisa mengintegrasikan hampir semua platform — WhatsApp, Tokopedia, Shopee, Google Sheets, berbagai CRM, sistem ERP, dan banyak lagi sesuai kebutuhan bisnis Anda.</p></div>
+                    <div class="faq-a"><p>Kami bisa mengintegrasikan hampir semua platform — WhatsApp, Tokopedia, Shopee, Google Sheets, berbagai CRM, sistem ERP, dan banyak lagi.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Bagaimana cara memulai konsultasi? <span class="faq-arrow">+</span></div>
@@ -850,7 +838,6 @@
 
     <script>
 
-        // ── FAQ ACCORDION ──
         document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
@@ -859,6 +846,7 @@
                 if (!isOpen) item.classList.add('open');
             });
         });
+
         // ── SCROLL REVEAL ──
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
