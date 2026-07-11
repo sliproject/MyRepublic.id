@@ -1488,13 +1488,12 @@
 
         // ── CHAT PAKET ──
         window.addEventListener('load', () => {
-            setTimeout(() => addMsg('msg-paket',
-                'Halo! Tanya apa saja soal paket internet MyRepublic — harga, kecepatan, cara berlangganan, atau promo 😊',
-                'bot'), 400);
-            setTimeout(() => addMsg('msg-komplain',
-                'Halo! Saya AI khusus keluhan MyRepublic 🙏
-Silakan ceritakan masalah Anda — saya akan bantu proses komplain Anda.',
-                'bot'), 400);
+    setTimeout(() => addMsg('msg-paket',
+        'Halo! Tanya apa saja soal paket internet MyRepublic — harga, kecepatan, cara berlangganan, atau promo.',
+        'bot'), 400);
+    setTimeout(() => addMsg('msg-komplain',
+        'Halo! Saya AI khusus keluhan MyRepublic. Silakan ceritakan masalah Anda — saya akan bantu proses komplain Anda.',
+        'bot'), 400);
         });
 
         // Paket — send on button click or Enter
