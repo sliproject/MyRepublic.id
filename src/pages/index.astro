@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style is:global>
         :root {
-            --navy: #050e1a;
-            --navy2: #091929;
-            --navy3: #0d2340;
-            --accent: #0ea5e9;
-            --accent2: #38bdf8;
-            --accent-glow: rgba(14, 165, 233, 0.15);
-            --text: #e2eaf5;
-            --text-muted: #8ba0bc;
-            --border: rgba(14, 165, 233, 0.18);
+            --navy: #0d0a0b;
+            --navy2: #1a0f10;
+            --navy3: #2a1215;
+            --accent: #e30613;
+            --accent2: #ff3344;
+            --accent-glow: rgba(227, 6, 19, 0.15);
+            --text: #f5e8e9;
+            --text-muted: #b89496;
+            --border: rgba(227, 6, 19, 0.22);
             --border-soft: rgba(255,255,255,0.06);
         }
 
@@ -36,8 +36,8 @@
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(14,165,233,0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(14,165,233,0.04) 1px, transparent 1px);
+                linear-gradient(rgba(227,6,19,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(227,6,19,0.04) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
             z-index: 0;
@@ -106,7 +106,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 800px; height: 500px;
-            background: radial-gradient(ellipse, rgba(14,165,233,0.12) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(227,6,19,0.12) 0%, transparent 70%);
             pointer-events: none;
         }
         .hero-content { text-align: center; }
@@ -142,7 +142,7 @@
             animation: fadeInUp 0.7s ease 0.1s both;
         }
         .h1-line2 {
-            background: linear-gradient(90deg, var(--accent), var(--accent2), #818cf8);
+            background: linear-gradient(90deg, var(--accent), var(--accent2), #ff8c94);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -166,13 +166,13 @@
             font-weight: 600; font-size: 15px;
             display: inline-flex; align-items: center; gap: 8px;
             transition: all 0.25s;
-            box-shadow: 0 0 0 0 rgba(14,165,233,0.4);
+            box-shadow: 0 0 0 0 rgba(227,6,19,0.4);
         }
         .btn-primary:hover {
             background: var(--accent2);
-            color: var(--navy);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(14,165,233,0.3);
+            box-shadow: 0 8px 30px rgba(227,6,19,0.3);
         }
         .btn-ghost {
             background: transparent;
@@ -195,9 +195,9 @@
             pointer-events: none;
             animation: float 8s ease-in-out infinite;
         }
-        .orb1 { width: 300px; height: 300px; background: rgba(14,165,233,0.08); top: 15%; left: 5%; animation-delay: 0s; }
-        .orb2 { width: 200px; height: 200px; background: rgba(129,140,248,0.06); top: 60%; right: 5%; animation-delay: -3s; }
-        .orb3 { width: 150px; height: 150px; background: rgba(56,189,248,0.07); bottom: 10%; left: 30%; animation-delay: -6s; }
+        .orb1 { width: 300px; height: 300px; background: rgba(227,6,19,0.08); top: 15%; left: 5%; animation-delay: 0s; }
+        .orb2 { width: 200px; height: 200px; background: rgba(180,20,30,0.06); top: 60%; right: 5%; animation-delay: -3s; }
+        .orb3 { width: 150px; height: 150px; background: rgba(255,50,60,0.07); bottom: 10%; left: 30%; animation-delay: -6s; }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -358,7 +358,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(14,165,233,0.1) 0%, transparent 60%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(227,6,19,0.1) 0%, transparent 60%);
             pointer-events: none;
         }
         .cta-box h2 {
@@ -385,33 +385,48 @@
         .footer-logo span { color: var(--accent); }
         footer p { font-size: 13px; color: var(--text-muted); }
 
-        /* ── CHAT WIDGET ── */
-        .chat-trigger {
+        /* ── DUAL CHAT BUTTONS ── */
+        .chat-buttons {
             position: fixed; bottom: 28px; right: 28px;
-            background: var(--accent);
-            color: white; border: none;
-            padding: 14px 24px;
-            border-radius: 50px;
-            font-weight: 700; font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 8px 24px rgba(14,165,233,0.35);
+            display: flex; flex-direction: column; gap: 10px;
+            align-items: flex-end;
             z-index: 1001;
+        }
+        .chat-btn {
             display: flex; align-items: center; gap: 8px;
+            border: none; border-radius: 50px;
+            padding: 12px 20px;
+            font-weight: 700; font-size: 13px;
+            cursor: pointer;
             transition: all 0.25s;
             font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-        .chat-trigger:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(14,165,233,0.45); }
+        .chat-btn-paket {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 6px 20px rgba(227,6,19,0.35);
+        }
+        .chat-btn-paket:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(227,6,19,0.5); }
+        .chat-btn-komplain {
+            background: #dc2626;
+            color: white;
+            box-shadow: 0 6px 20px rgba(220,38,38,0.35);
+        }
+        .chat-btn-komplain:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(220,38,38,0.5); }
         .chat-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
 
+        /* ── CHAT WINDOWS ── */
         .chat-window {
             position: fixed; bottom: 96px; right: 28px;
-            width: 380px; height: 520px;
+            width: 380px; height: 540px;
             background: var(--navy2);
             border: 1px solid var(--border);
             border-radius: 20px;
             display: none; flex-direction: column;
             box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-            z-index: 1001;
+            z-index: 1002;
             overflow: hidden;
             font-family: 'Inter', sans-serif;
         }
@@ -419,10 +434,12 @@
         @keyframes slideUp { from { opacity: 0; transform: translateY(16px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
         .chat-header {
-            background: linear-gradient(135deg, #0369a1, #0ea5e9);
-            padding: 18px 20px;
+            padding: 16px 20px;
             display: flex; justify-content: space-between; align-items: center;
         }
+        .chat-header.paket-header { background: linear-gradient(135deg, #8b0000, #e30613); }
+        .chat-header.komplain-header { background: linear-gradient(135deg, #991b1b, #dc2626); }
+
         .chat-agent { display: flex; align-items: center; gap: 12px; }
         .agent-avatar {
             width: 38px; height: 38px; border-radius: 10px;
@@ -443,7 +460,8 @@
 
         .msg { padding: 10px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; max-width: 82%; word-break: break-word; }
         .msg.bot { background: var(--navy2); color: var(--text); border: 1px solid var(--border-soft); border-bottom-left-radius: 4px; align-self: flex-start; }
-        .msg.user { background: #16a34a; color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
+        .msg.user { background: #b91c1c; color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
+        .msg.system { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25); color: #fbbf24; font-size: 12px; border-radius: 8px; align-self: center; max-width: 90%; text-align: center; padding: 8px 12px; }
 
         .typing { display: flex; gap: 4px; align-items: center; padding: 12px 16px; background: var(--navy2); border: 1px solid var(--border-soft); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; }
         .typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); animation: bounce 1.4s infinite; }
@@ -472,6 +490,15 @@
             transition: background 0.2s;
         }
         .chat-send:hover { background: var(--accent2); }
+        .chat-send.red { background: #dc2626; }
+        .chat-send.red:hover { background: #b91c1c; }
+
+        /* Komplain form CSS removed — now uses chat style */
+
+        @media (max-width: 480px) {
+            .chat-window { width: calc(100vw - 24px); right: 12px; bottom: 80px; height: 480px; }
+            .chat-buttons { right: 12px; bottom: 12px; }
+        }
 
         /* ── ANIMATIONS ── */
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
@@ -552,8 +579,8 @@
             font-family: 'Inter', sans-serif;
         }
         .ptab.active, .ptab:hover {
-            background: #6d28d9;
-            border-color: #7c3aed;
+            background: #c00010;
+            border-color: #e30613;
             color: #fff;
         }
         .pricing-panel { display: none; }
@@ -579,9 +606,9 @@
             font-family: 'Inter', sans-serif;
         }
         .psubtab.active, .psubtab:hover {
-            background: rgba(109,40,217,0.25);
-            border-color: #7c3aed;
-            color: #c4b5fd;
+            background: rgba(227,6,19,0.2);
+            border-color: #e30613;
+            color: #ffaaad;
         }
         .subpanel { display: none; }
         .subpanel.active { display: block; }
@@ -601,18 +628,18 @@
             transition: all 0.3s;
         }
         .pkg-card:hover {
-            border-color: #7c3aed;
+            border-color: #e30613;
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(109,40,217,0.2);
+            box-shadow: 0 12px 32px rgba(227,6,19,0.2);
         }
         .pkg-card.featured {
-            border-color: #7c3aed;
-            background: linear-gradient(135deg, rgba(109,40,217,0.15), rgba(124,58,237,0.08));
+            border-color: #e30613;
+            background: linear-gradient(135deg, rgba(227,6,19,0.12), rgba(180,10,20,0.06));
         }
         .pkg-badge {
             position: absolute;
             top: -10px; right: 16px;
-            background: linear-gradient(90deg, #7c3aed, #6d28d9);
+            background: linear-gradient(90deg, #e30613, #c00010);
             color: #fff;
             font-size: 11px; font-weight: 700;
             padding: 3px 10px;
@@ -627,9 +654,9 @@
         }
         .pkg-speed {
             display: inline-block;
-            background: rgba(109,40,217,0.3);
-            border: 1px solid rgba(124,58,237,0.4);
-            color: #c4b5fd;
+            background: rgba(227,6,19,0.2);
+            border: 1px solid rgba(227,6,19,0.4);
+            color: #ffaaad;
             font-size: 12px; font-weight: 700;
             padding: 3px 10px;
             border-radius: 6px;
@@ -708,8 +735,8 @@
             font-size: 13px;
         }
         .ap-table thead th {
-            background: rgba(109,40,217,0.25);
-            color: #c4b5fd;
+            background: rgba(227,6,19,0.2);
+            color: #ffaaad;
             font-weight: 700;
             padding: 10px 14px;
             text-align: left;
@@ -718,7 +745,7 @@
         }
         .ap-table thead th.center { text-align: center; }
         .ap-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-        .ap-table tbody tr:hover { background: rgba(109,40,217,0.08); }
+        .ap-table tbody tr:hover { background: rgba(227,6,19,0.07); }
         .ap-table td {
             padding: 9px 14px;
             color: var(--text-muted);
@@ -727,10 +754,10 @@
         }
         .ap-table td.bold { color: #fff; font-weight: 600; }
         .ap-table td.center { text-align: center; }
-        .ap-table td.purple { color: #c4b5fd; font-weight: 600; }
+        .ap-table td.purple { color: #ffaaad; font-weight: 600; }
         .ap-table .ap-section td {
-            background: rgba(109,40,217,0.15);
-            color: #a78bfa;
+            background: rgba(227,6,19,0.12);
+            color: #ff8c94;
             font-weight: 700;
             font-size: 12px;
             letter-spacing: 1px;
@@ -1213,14 +1240,14 @@
             <!-- ── TAB: AREA LIPPO PROPERTY ── -->
             <div class="pricing-panel" id="panel-lippo">
                 <p style="font-size:14px;color:var(--text-muted);margin-bottom:28px;">
-                    Paket khusus untuk hunian &amp; kawasan properti milik <strong style="color:#c4b5fd;">Lippo Group</strong> (Lippo Village, Lippo Cikarang, St. Moritz, Kemang Village, dll.)
+                    Paket khusus untuk hunian &amp; kawasan properti milik <strong style="color:#ffaaad;">Lippo Group</strong> (Lippo Village, Lippo Cikarang, St. Moritz, Kemang Village, dll.)
                 </p>
                 <div class="pkg-grid">
                     <!-- LP05 -->
                     <div class="pkg-card">
                         <div class="pkg-name">Lippo Fast50</div>
                         <div class="pkg-speed">50 Mbps</div>
-                        <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Kode: LP05</div>
+                        <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP05</div>
                         <div class="pkg-price">Rp 300.000</div>
                         <div class="pkg-price-sub">/bulan</div>
                         <div class="pkg-features">
@@ -1234,7 +1261,7 @@
                         <div class="pkg-badge">POPULER</div>
                         <div class="pkg-name">Lippo Nova100</div>
                         <div class="pkg-speed">100 Mbps</div>
-                        <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Kode: LP06</div>
+                        <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP06</div>
                         <div class="pkg-price">Rp 375.000</div>
                         <div class="pkg-price-sub">/bulan</div>
                         <div class="pkg-features">
@@ -1248,7 +1275,7 @@
                         <div class="pkg-badge">RECOMMENDED</div>
                         <div class="pkg-name">Lippo MyGamer250</div>
                         <div class="pkg-speed">250 Mbps</div>
-                        <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Kode: LP07</div>
+                        <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP07</div>
                         <div class="pkg-price">Rp 500.000</div>
                         <div class="pkg-price-sub">/bulan</div>
                         <div class="pkg-features">
@@ -1262,7 +1289,7 @@
                     <div class="pkg-card">
                         <div class="pkg-name">Lippo Prime500</div>
                         <div class="pkg-speed">500 Mbps</div>
-                        <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px;">Kode: LP08</div>
+                        <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP08</div>
                         <div class="pkg-price">Rp 650.000</div>
                         <div class="pkg-price-sub">/bulan</div>
                         <div class="pkg-features">
@@ -1331,27 +1358,53 @@
         </div>
     </footer>
 
-    <!-- CHAT WIDGET -->
-    <button class="chat-trigger" id="chat-trigger">
-        <span class="chat-dot"></span>
-        Chat AI
-    </button>
-    <div class="chat-window" id="chat-window">
-        <div class="chat-header">
+    <!-- CHAT BUTTONS -->
+    <div class="chat-buttons">
+        <button class="chat-btn chat-btn-paket" id="btn-paket">
+            <span class="chat-dot"></span>
+            🎧 Tanya Paket
+        </button>
+        <button class="chat-btn chat-btn-komplain" id="btn-komplain">
+            📢 Komplain
+        </button>
+    </div>
+
+    <!-- CHAT PAKET WINDOW -->
+    <div class="chat-window" id="win-paket">
+        <div class="chat-header paket-header">
             <div class="chat-agent">
                 <div class="agent-avatar">🤖</div>
                 <div>
-                    <div class="agent-name">SLi AI Assistant</div>
+                    <div class="agent-name">AI Paket MyRepublic</div>
                     <div class="agent-status"><span class="status-online"></span> Online sekarang</div>
                 </div>
             </div>
-            <button class="close-chat" id="close-chat">×</button>
+            <button class="close-chat" data-target="win-paket">×</button>
         </div>
-        <div class="chat-body" id="chat-messages"></div>
-        <form class="chat-footer" id="chat-form">
-            <input type="text" id="user-input" class="chat-input" placeholder="Ketik pesan Anda..." autocomplete="off" required />
-            <button type="submit" class="chat-send">➤</button>
-        </form>
+        <div class="chat-body" id="msg-paket"></div>
+        <div class="chat-footer">
+            <input type="text" id="input-paket" class="chat-input" placeholder="Tanya soal paket internet..." autocomplete="off" />
+            <button class="chat-send" id="send-paket">➤</button>
+        </div>
+    </div>
+
+    <!-- CHAT KOMPLAIN WINDOW -->
+    <div class="chat-window" id="win-komplain">
+        <div class="chat-header komplain-header">
+            <div class="chat-agent">
+                <div class="agent-avatar">📋</div>
+                <div>
+                    <div class="agent-name">AI Komplain MyRepublic</div>
+                    <div class="agent-status"><span class="status-online"></span> Siap membantu</div>
+                </div>
+            </div>
+            <button class="close-chat" data-target="win-komplain">×</button>
+        </div>
+        <div class="chat-body" id="msg-komplain"></div>
+        <div class="chat-footer">
+            <input type="text" id="input-komplain" class="chat-input" placeholder="Ceritakan masalah Anda..." autocomplete="off" />
+            <button class="chat-send red" id="send-komplain">➤</button>
+        </div>
     </div>
 
     <script>
@@ -1377,76 +1430,128 @@
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
 
-        // ── CHAT WIDGET ──
-        const chatTrigger = document.getElementById('chat-trigger');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChat = document.getElementById('close-chat');
-        const chatForm = document.getElementById('chat-form');
-        const chatMessages = document.getElementById('chat-messages');
-        const userInput = document.getElementById('user-input');
-        const sessionId = 'sess_' + Math.random().toString(36).substring(7);
+        // ── CHAT ENGINE ──
+        // === EDIT WEBHOOK DI SINI ===
+        const WEBHOOK_PAKET    = 'https://n8n.aleshatour.my.id/webhook/salesmyrep';
+        const WEBHOOK_KOMPLAIN = 'https://n8n.aleshatour.my.id/webhook/komplain'; // <-- ganti URL webhook komplain Anda
+        // ==============================
 
-        chatTrigger.addEventListener('click', () => chatWindow.classList.toggle('show'));
-        closeChat.addEventListener('click', () => chatWindow.classList.remove('show'));
+        const sessionPaket    = 'paket_'    + Math.random().toString(36).substring(7);
+        const sessionKomplain = 'komplain_' + Math.random().toString(36).substring(7);
 
-        function addMsg(text, sender) {
+        // ── CLOSE BUTTONS ──
+        document.querySelectorAll('.close-chat').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById(btn.dataset.target).classList.remove('show');
+            });
+        });
+
+        // ── TOGGLE WINDOWS (tutup yang lain) ──
+        document.getElementById('btn-paket').addEventListener('click', () => {
+            document.getElementById('win-komplain').classList.remove('show');
+            document.getElementById('win-paket').classList.toggle('show');
+        });
+        document.getElementById('btn-komplain').addEventListener('click', () => {
+            document.getElementById('win-paket').classList.remove('show');
+            document.getElementById('win-komplain').classList.toggle('show');
+        });
+
+        // ── SHARED HELPERS ──
+        function addMsg(containerId, text, type) {
+            const box = document.getElementById(containerId);
             const div = document.createElement('div');
-            div.className = 'msg ' + sender;
+            div.className = 'msg ' + type;
             div.textContent = text;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            return div;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
         }
-
-        function showTyping() {
+        function showTyping(containerId, typingId) {
+            const box = document.getElementById(containerId);
             const t = document.createElement('div');
-            t.className = 'typing'; t.id = 'typing';
+            t.className = 'typing'; t.id = typingId;
             t.innerHTML = '<span></span><span></span><span></span>';
-            chatMessages.appendChild(t);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            box.appendChild(t);
+            box.scrollTop = box.scrollHeight;
         }
-        function hideTyping() { const t = document.getElementById('typing'); if (t) t.remove(); }
+        function hideTyping(typingId) {
+            const t = document.getElementById(typingId);
+            if (t) t.remove();
+        }
+        async function postWebhook(url, payload) {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            return await res.json();
+        }
 
+        // ── CHAT PAKET ──
         window.addEventListener('load', () => {
-            setTimeout(() => addMsg('Halo! Saya asisten AI SLi Project 👋 Ada yang bisa saya bantu?', 'bot'), 600);
+            setTimeout(() => addMsg('msg-paket',
+                'Halo! Tanya apa saja soal paket internet MyRepublic — harga, kecepatan, cara berlangganan, atau promo 😊',
+                'bot'), 400);
+            setTimeout(() => addMsg('msg-komplain',
+                'Halo! Saya AI khusus keluhan MyRepublic 🙏
+Silakan ceritakan masalah Anda — saya akan bantu proses komplain Anda.',
+                'bot'), 400);
         });
 
-        // ── PRICING TABS ──
-        function switchTab(id, btn) {
-            document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
-            document.getElementById('panel-' + id).classList.add('active');
-            btn.classList.add('active');
-        }
-        function switchSub(tabId, subId, btn) {
-            const panel = document.getElementById('panel-' + tabId);
-            panel.querySelectorAll('.subpanel').forEach(p => p.classList.remove('active'));
-            panel.querySelectorAll('.psubtab').forEach(b => b.classList.remove('active'));
-            document.getElementById(tabId + '-' + subId).classList.add('active');
-            btn.classList.add('active');
-        }
-
-        chatForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const text = userInput.value.trim();
+        // Paket — send on button click or Enter
+        document.getElementById('send-paket').addEventListener('click', sendPaket);
+        document.getElementById('input-paket').addEventListener('keydown', e => {
+            if (e.key === 'Enter') sendPaket();
+        });
+        async function sendPaket() {
+            const input = document.getElementById('input-paket');
+            const text  = input.value.trim();
             if (!text) return;
-            addMsg(text, 'user');
-            userInput.value = '';
-            showTyping();
+            addMsg('msg-paket', text, 'user');
+            input.value = '';
+            showTyping('msg-paket', 'typing-paket');
             try {
-                const res = await fetch('https://n8n.aleshatour.my.id/webhook/website', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text, chatId: sessionId })
+                const data = await postWebhook(WEBHOOK_PAKET, {
+                    type: 'tanya_paket',
+                    message: text,
+                    chatId: sessionPaket
                 });
-                const data = await res.json();
-                hideTyping();
-                addMsg(data.reply || data.output || data.message || 'Tim kami akan segera membalas!', 'bot');
+                hideTyping('typing-paket');
+                addMsg('msg-paket',
+                    data.reply || data.output || data.message || 'Tim kami akan segera membalas!',
+                    'bot');
             } catch {
-                hideTyping();
-                addMsg('Maaf, koneksi sedang bermasalah. Silakan coba kembali.', 'bot');
+                hideTyping('typing-paket');
+                addMsg('msg-paket', 'Maaf, koneksi bermasalah. Silakan coba kembali.', 'bot');
             }
+        }
+
+        // ── CHAT KOMPLAIN ──
+        document.getElementById('send-komplain').addEventListener('click', sendKomplain);
+        document.getElementById('input-komplain').addEventListener('keydown', e => {
+            if (e.key === 'Enter') sendKomplain();
         });
+        async function sendKomplain() {
+            const input = document.getElementById('input-komplain');
+            const text  = input.value.trim();
+            if (!text) return;
+            addMsg('msg-komplain', text, 'user');
+            input.value = '';
+            showTyping('msg-komplain', 'typing-komplain');
+            try {
+                const data = await postWebhook(WEBHOOK_KOMPLAIN, {
+                    type: 'komplain',
+                    message: text,
+                    chatId: sessionKomplain
+                });
+                hideTyping('typing-komplain');
+                addMsg('msg-komplain',
+                    data.reply || data.output || data.message || 'Pesan Anda sudah kami terima. Mohon tunggu sebentar.',
+                    'bot');
+            } catch {
+                hideTyping('typing-komplain');
+                addMsg('msg-komplain', 'Maaf, koneksi bermasalah. Silakan coba kembali.', 'bot');
+            }
+        }
     </script>
 </body>
 </html>
