@@ -793,7 +793,7 @@
                 <a href="#cara-kerja">Cara Kerja</a>
                 <a href="#harga">Harga</a>
                 <a href="#faq">FAQ</a>
-                <a href="https://wa.me/6285172076698" class="btn-cta">Hubungi Kami</a>
+                <a href="https://wa.me/6285167313400" class="btn-cta">Hubungi Kami</a>
             </div>
         </div>
     </nav>
@@ -812,7 +812,7 @@
             </h1>
             <p>SLi Project membantu bisnis Anda tumbuh lebih cepat dengan solusi AI — dari customer service 24/7 hingga otomatisasi penjualan yang cerdas.</p>
             <div class="hero-actions">
-                <a href="https://wa.me/6285172076698" class="btn-primary">
+                <a href="https://wa.me/6285167313400" class="btn-primary">
                     💬 Konsultasi Gratis
                 </a>
                 <a href="#services" class="btn-ghost">
@@ -1343,7 +1343,7 @@
                 <h2>Siap mentransformasi bisnis Anda?</h2>
                 <p>Mulai dengan konsultasi gratis. Tidak ada komitmen, tidak ada biaya tersembunyi.</p>
                 <div class="cta-actions">
-                    <a href="https://wa.me/6285172076698" class="btn-primary">💬 Chat via WhatsApp</a>
+                    <a href="https://wa.me/6285167313400" class="btn-primary">💬 Chat via WhatsApp</a>
                     <a href="mailto:sliproject.id@gmail.com" class="btn-ghost">✉️ Kirim Email</a>
                 </div>
             </div>
@@ -1407,7 +1407,7 @@
         </div>
     </div>
 
-    <script>
+    <script is:inline>
 
         document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
@@ -1432,7 +1432,7 @@
 
         // ── CHAT ENGINE ──
         // === EDIT WEBHOOK DI SINI ===
-        const WEBHOOK_PAKET    = 'https://n8n.aleshatour.my.id/webhook/website';
+        const WEBHOOK_PAKET    = 'https://n8n.aleshatour.my.id/webhook/salesmyrep';
         const WEBHOOK_KOMPLAIN = 'https://n8n.aleshatour.my.id/webhook/komplain'; // <-- ganti URL webhook komplain Anda
         // ==============================
 
@@ -1488,13 +1488,12 @@
 
         // ── CHAT PAKET ──
         window.addEventListener('load', () => {
-            setTimeout(() => addMsg('msg-paket',
-                'Halo! Tanya apa saja soal paket internet MyRepublic — harga, kecepatan, cara berlangganan, atau promo 😊',
-                'bot'), 400);
-            setTimeout(() => addMsg('msg-komplain',
-                'Halo! Saya AI khusus keluhan MyRepublic 🙏
-Silakan ceritakan masalah Anda — saya akan bantu proses komplain Anda.',
-                'bot'), 400);
+    setTimeout(() => addMsg('msg-paket',
+        'Halo! Tanya apa saja soal paket internet MyRepublic — harga, kecepatan, cara berlangganan, atau promo.',
+        'bot'), 400);
+    setTimeout(() => addMsg('msg-komplain',
+        'Halo! Saya AI khusus keluhan MyRepublic. Silakan ceritakan masalah Anda — saya akan bantu proses komplain Anda.',
+        'bot'), 400);
         });
 
         // Paket — send on button click or Enter
