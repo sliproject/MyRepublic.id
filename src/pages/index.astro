@@ -560,16 +560,17 @@
 
             <!-- MAIN TABS -->
             <div class="pricing-tabs reveal">
-                <button class="ptab active" onclick="switchTab('umum', this)">🌐 Area Umum</button>
-                <button class="ptab" onclick="switchTab('lippo', this)">🏘️ Area Lippo Property</button>
+                <button class="ptab active" data-tab="umum">🌐 Area Umum</button>
+                <button class="ptab" data-tab="lippo">🏘️ Area Lippo Property</button>
+                <button class="ptab" data-tab="partner">🤝 Area Partnership</button>
             </div>
 
             <!-- ── AREA UMUM ── -->
             <div class="pricing-panel active" id="panel-umum">
                 <div class="pricing-subtabs">
-                    <button class="psubtab active" onclick="switchSub('umum','monthly',this)">Bulanan (Harga Special)</button>
-                    <button class="psubtab" onclick="switchSub('umum','ap9',this)">Advance Payment 9+3</button>
-                    <button class="psubtab" onclick="switchSub('umum','ap12',this)">Advance Payment 12+6</button>
+                    <button class="psubtab active" data-tab="umum" data-sub="monthly">Bulanan (Harga Special)</button>
+                    <button class="psubtab" data-tab="umum" data-sub="ap9">Advance Payment 9+3</button>
+                    <button class="psubtab" data-tab="umum" data-sub="ap12">Advance Payment 12+6</button>
                 </div>
 
                 <!-- MONTHLY -->
@@ -753,7 +754,7 @@
                         <div class="pkg-speed">50 Mbps</div>
                         <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP05</div>
                         <div class="pkg-price">Rp 300.000</div>
-                        <div class="pkg-price-sub">/bulan</div>
+                        <div class="pkg-price-sub">/bulan · <span style="color:#fbbf24;font-weight:600;">belum termasuk pajak</span></div>
                         <div class="pkg-features">
                             <span class="pkg-feat">Internet simetris 1:1</span>
                             <span class="pkg-feat">Tanpa batas kuota</span>
@@ -766,7 +767,7 @@
                         <div class="pkg-speed">100 Mbps</div>
                         <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP06</div>
                         <div class="pkg-price">Rp 375.000</div>
-                        <div class="pkg-price-sub">/bulan</div>
+                        <div class="pkg-price-sub">/bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
                         <div class="pkg-features">
                             <span class="pkg-feat">Internet simetris 1:1</span>
                             <span class="pkg-feat">Tanpa batas kuota</span>
@@ -779,7 +780,7 @@
                         <div class="pkg-speed">250 Mbps</div>
                         <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP07</div>
                         <div class="pkg-price">Rp 500.000</div>
-                        <div class="pkg-price-sub">/bulan</div>
+                        <div class="pkg-price-sub">/bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
                         <div class="pkg-features">
                             <span class="pkg-feat">Internet simetris 1:1</span>
                             <span class="pkg-feat">Tanpa batas kuota</span>
@@ -792,7 +793,7 @@
                         <div class="pkg-speed">500 Mbps</div>
                         <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: LP08</div>
                         <div class="pkg-price">Rp 650.000</div>
-                        <div class="pkg-price-sub">/bulan</div>
+                        <div class="pkg-price-sub">/bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
                         <div class="pkg-features">
                             <span class="pkg-feat">Internet simetris 1:1</span>
                             <span class="pkg-feat">Tanpa batas kuota</span>
@@ -803,6 +804,114 @@
                 </div>
                 <p class="pkg-note">Paket Lippo hanya tersedia di kawasan properti Lippo Group. Hubungi kami untuk cek ketersediaan di lokasi Anda.</p>
             </div><!-- /panel-lippo -->
+
+            <!-- ── AREA PARTNERSHIP ── -->
+            <div class="pricing-panel" id="panel-partner">
+                <p class="lippo-note">
+                    🤝 Paket khusus untuk mitra &amp; area partnership MyRepublic — berlangganan tahunan dengan harga lebih hemat. Cocok untuk properti, perumahan, dan kawasan komersial mitra.
+                </p>
+
+                <!-- Sub-tabs Partnership -->
+                <div class="pricing-subtabs" id="subtabs-partner">
+                    <button class="psubtab active" data-tab="partner" data-sub="annual">Tahunan (12 Bulan)</button>
+                    <button class="psubtab" data-tab="partner" data-sub="value3">Value 3 Bulanan</button>
+                </div>
+
+                <!-- ANNUAL 12 BULAN -->
+                <div class="subpanel active" id="partner-annual">
+                    <div class="pkg-grid">
+                        <!-- FS001 Value 30 Mbps -->
+                        <div class="pkg-card">
+                            <div class="pkg-name">Value 30</div>
+                            <div class="pkg-speed">30 Mbps</div>
+                            <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: FS001</div>
+                            <div class="pkg-price">Rp 4.116.000</div>
+                            <div class="pkg-price-sub">/ 12 bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
+                            <div class="pkg-bonus">≈ Rp 343.000/bulan</div>
+                            <div class="pkg-features">
+                                <span class="pkg-feat">Internet simetris 1:1</span>
+                                <span class="pkg-feat">Tanpa batas kuota</span>
+                                <span class="pkg-feat">Full Fiber Optic</span>
+                                <span class="pkg-feat">Berlangganan 12 bulan</span>
+                            </div>
+                        </div>
+                        <!-- FS003 Fast 50 Mbps -->
+                        <div class="pkg-card featured">
+                            <div class="pkg-badge">POPULER</div>
+                            <div class="pkg-name">Fast 50</div>
+                            <div class="pkg-speed">50 Mbps</div>
+                            <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: FS003</div>
+                            <div class="pkg-price">Rp 5.448.000</div>
+                            <div class="pkg-price-sub">/ 12 bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
+                            <div class="pkg-bonus">≈ Rp 454.000/bulan</div>
+                            <div class="pkg-features">
+                                <span class="pkg-feat">Internet simetris 1:1</span>
+                                <span class="pkg-feat">Tanpa batas kuota</span>
+                                <span class="pkg-feat">Full Fiber Optic</span>
+                                <span class="pkg-feat">Berlangganan 12 bulan</span>
+                            </div>
+                        </div>
+                        <!-- FS006 Nova 100 Mbps -->
+                        <div class="pkg-card featured">
+                            <div class="pkg-badge">RECOMMENDED</div>
+                            <div class="pkg-name">Nova 100</div>
+                            <div class="pkg-speed">100 Mbps</div>
+                            <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: FS006</div>
+                            <div class="pkg-price">Rp 8.520.000</div>
+                            <div class="pkg-price-sub">/ 12 bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
+                            <div class="pkg-bonus">≈ Rp 710.000/bulan</div>
+                            <div class="pkg-features">
+                                <span class="pkg-feat">Internet simetris 1:1</span>
+                                <span class="pkg-feat">Tanpa batas kuota</span>
+                                <span class="pkg-feat">Full Fiber Optic</span>
+                                <span class="pkg-feat">Berlangganan 12 bulan</span>
+                            </div>
+                        </div>
+                        <!-- FS014 MyGamer 250 Mbps -->
+                        <div class="pkg-card">
+                            <div class="pkg-name">MyGamer 250</div>
+                            <div class="pkg-speed">250 Mbps</div>
+                            <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: FS014</div>
+                            <div class="pkg-price">Rp 9.984.000</div>
+                            <div class="pkg-price-sub">/ 12 bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
+                            <div class="pkg-bonus">≈ Rp 832.000/bulan</div>
+                            <div class="pkg-features">
+                                <span class="pkg-feat">Internet simetris 1:1</span>
+                                <span class="pkg-feat">Tanpa batas kuota</span>
+                                <span class="pkg-feat">Full Fiber Optic</span>
+                                <span class="pkg-feat">Cocok untuk gaming &amp; streaming</span>
+                                <span class="pkg-feat">Berlangganan 12 bulan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pkg-note">Paket tahunan 12 bulan · Semua harga belum termasuk pajak · Hubungi kami untuk info lebih lanjut</p>
+                </div>
+
+                <!-- VALUE 3 BULANAN -->
+                <div class="subpanel" id="partner-value3">
+                    <div style="max-width:480px;">
+                        <div class="pkg-card featured" style="max-width:360px;">
+                            <div class="pkg-badge">EKSKLUSIF</div>
+                            <div class="pkg-name">Value 30</div>
+                            <div class="pkg-speed">30 Mbps</div>
+                            <div style="font-size:11px;color:#ff8c94;margin-bottom:12px;">Kode: FS001 · Khusus 3 Bulanan</div>
+                            <div class="pkg-price">Rp 825.000</div>
+                            <div class="pkg-price-sub">/ 3 bulan &nbsp;·&nbsp; <span style="color:#fbbf24;font-size:11px;font-weight:600;">belum termasuk pajak</span></div>
+                            <div class="pkg-bonus">≈ Rp 275.000/bulan</div>
+                            <div class="pkg-features">
+                                <span class="pkg-feat">Internet simetris 1:1</span>
+                                <span class="pkg-feat">Tanpa batas kuota</span>
+                                <span class="pkg-feat">Full Fiber Optic</span>
+                                <span class="pkg-feat">Hanya tersedia untuk paket Value</span>
+                                <span class="pkg-feat">Berlangganan per 3 bulan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pkg-note" style="max-width:480px;">Paket 3 bulanan hanya tersedia untuk Value 30 Mbps di Area Partnership · Belum termasuk pajak</p>
+                </div>
+
+            </div><!-- /panel-partner -->
+
         </div>
     </section>
 
@@ -929,19 +1038,26 @@
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // ── PRICING TABS ──
-        function switchTab(id, btn) {
-            document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
-            document.getElementById('panel-' + id).classList.add('active');
-            btn.classList.add('active');
-        }
-        function switchSub(tabId, subId, btn) {
-            const panel = document.getElementById('panel-' + tabId);
-            panel.querySelectorAll('.subpanel').forEach(p => p.classList.remove('active'));
-            panel.querySelectorAll('.psubtab').forEach(b => b.classList.remove('active'));
-            document.getElementById(tabId + '-' + subId).classList.add('active');
-            btn.classList.add('active');
-        }
+        document.querySelectorAll('.ptab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.dataset.tab;
+                document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
+                document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+                document.getElementById('panel-' + id).classList.add('active');
+                btn.classList.add('active');
+            });
+        });
+        document.querySelectorAll('.psubtab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+                const subId = btn.dataset.sub;
+                const panel = document.getElementById('panel-' + tabId);
+                panel.querySelectorAll('.subpanel').forEach(p => p.classList.remove('active'));
+                panel.querySelectorAll('.psubtab').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabId + '-' + subId).classList.add('active');
+                btn.classList.add('active');
+            });
+        });
 
         // ── CHAT ENGINE ──
         // === EDIT WEBHOOK DI SINI ===
