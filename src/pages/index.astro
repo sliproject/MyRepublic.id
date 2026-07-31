@@ -324,6 +324,31 @@
         }
         .ap-na { color: #ef4444 !important; font-weight: 700; }
 
+        /* ── DEDICATED KOMPLAIN SECTION ── */
+        .komplain-section {
+            padding: 80px 0;
+            background: var(--navy2);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .komplain-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .komplain-card {
+            background: var(--navy);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .komplain-card:hover { transform: translateY(-4px); border-color: #dc2626; }
+        .komplain-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; margin-bottom: 10px; }
+        .komplain-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+
         /* ── CTA BAND ── */
         .cta-band {
             padding: 72px 0;
@@ -350,24 +375,46 @@
         .footer-logo span { color: var(--accent); }
         footer p { font-size: 13px; color: var(--text-muted); }
 
-        /* ── DUAL CHAT BUTTONS ── */
+        /* ── DUAL CHAT BUTTONS (MODIFIED SIZES) ── */
         .chat-buttons {
             position: fixed; bottom: 28px; right: 28px;
-            display: flex; flex-direction: column; gap: 10px;
+            display: flex; flex-direction: column; gap: 12px;
             align-items: flex-end; z-index: 1001;
         }
         .chat-btn {
             display: flex; align-items: center; gap: 8px;
             border: none; border-radius: 50px;
-            padding: 12px 20px; font-weight: 700; font-size: 13px;
             cursor: pointer; transition: all 0.25s;
             font-family: 'Inter', sans-serif; white-space: nowrap;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-        .chat-btn-paket { background: var(--accent); color: white; }
-        .chat-btn-paket:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(227,6,19,0.5); }
-        .chat-btn-komplain { background: #991b1b; color: white; }
-        .chat-btn-komplain:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(153,27,27,0.5); }
+        /* Tombol Tanya Paket (Diperkecil)[cite: 1] */
+        .chat-btn-paket { 
+            background: var(--accent); 
+            color: white; 
+            padding: 8px 14px; 
+            font-size: 11px; 
+            font-weight: 600;
+            opacity: 0.85;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .chat-btn-paket:hover { opacity: 1; transform: translateY(-1px); }
+
+        /* Tombol Komplain (Diperbesar + Lebih Menonjol)[cite: 1] */
+        .chat-btn-komplain { 
+            background: #dc2626; 
+            color: white; 
+            padding: 16px 28px; 
+            font-size: 15px; 
+            font-weight: 800;
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.6);
+            animation: pulse-komplain 2s infinite;
+        }
+        .chat-btn-komplain:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(220, 38, 38, 0.8); }
+        @keyframes pulse-komplain {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+        }
+
         .chat-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
 
         /* ── CHAT WINDOWS ── */
@@ -448,12 +495,12 @@
     <nav>
         <div class="nav-inner">
             <a href="#" class="logo">
-                <!-- Ganti src dengan logo MyRepublic jika ada -->
                 <span style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:#fff;">My<span style="color:var(--accent);">Republic</span></span>
             </a>
             <div class="nav-links">
                 <a href="#harga">Paket</a>
                 <a href="#keunggulan">Keunggulan</a>
+                <a href="#komplain-section">Pusat Komplain</a>
                 <a href="#faq">FAQ</a>
                 <a href="https://wa.me/6285167313400" class="btn-nav-cta">Daftar Sekarang</a>
             </div>
@@ -469,7 +516,7 @@
                 Internet Cepat,<br>
                 <span class="h1-accent">Tanpa Batas Kuota</span>
             </h1>
-            <p>MyRepublic hadir dengan teknologi 100% Full Fiber Optic — koneksi simetris 1:1, stabil, dan gratis instalasi untuk rumah Anda.</p>
+            <p>MyRepublic hadir dengan teknologi 100% Full Fiber Optic — koneksi simetris 1:1, stabil, dan gratis instalasi untuk rumah Anda[cite: 1].</p>
 
             <div class="hero-badges">
                 <span class="hero-badge"><span class="ok">✓</span> Gratis Instalasi</span>
@@ -516,47 +563,38 @@
                 <div class="k-item">
                     <div class="k-icon">⚡</div>
                     <div class="k-title">Kecepatan Penuh</div>
-                    <div class="k-desc">Upload & download sama cepat, tidak ada throttling.</div>
+                    <div class="k-desc">Upload & download sama cepat, tidak ada throttling[cite: 1].</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">🛡️</div>
                     <div class="k-title">Tahan Cuaca Ekstrim</div>
-                    <div class="k-desc">Fiber optic tidak terpengaruh hujan & petir.</div>
+                    <div class="k-desc">Fiber optic tidak terpengaruh hujan & petir[cite: 1].</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">📡</div>
                     <div class="k-title">Jaringan Stabil</div>
-                    <div class="k-desc">Latensi rendah, cocok untuk gaming & video call.</div>
+                    <div class="k-desc">Latensi rendah, cocok untuk gaming & video call[cite: 1].</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">🔧</div>
                     <div class="k-title">Gratis Instalasi</div>
-                    <div class="k-desc">Tidak ada biaya pemasangan tersembunyi.</div>
+                    <div class="k-desc">Tidak ada biaya pemasangan tersembunyi[cite: 1].</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">💰</div>
                     <div class="k-title">Harga Terjangkau</div>
-                    <div class="k-desc">Paket mulai Rp 233.100/bulan sudah termasuk PPN.</div>
+                    <div class="k-desc">Paket mulai Rp 233.100/bulan sudah termasuk PPN[cite: 1].</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         PRICING — EDIT PAKET DI SINI
-         ══════════════════════════════════════════
-         TAB 1: Area Umum
-           Bulanan: NEO, VELO, NEXUS, PRIME, WONDER, ULTRA
-           AP 9+3 & 12+6: Internet Only + Combo TV
-
-         TAB 2: Area Lippo Property
-           LP05 Fast50, LP06 Nova100, LP07 MyGamer250, LP08 Prime500
-         ═══════════════════════════════════════════ -->
+    <!-- ── PRICING ── -->
     <section id="harga" class="pricing">
         <div class="container">
             <p class="section-label reveal">Paket Internet</p>
             <h2 class="section-title reveal">Pilih Paket MyRepublic</h2>
-            <p class="section-sub reveal">Internet simetris 1:1 Upload &amp; Download, tanpa batas kuota, 100% Full Fiber Optic. Gratis instalasi.</p>
+            <p class="section-sub reveal">Internet simetris 1:1 Upload &amp; Download, tanpa batas kuota, 100% Full Fiber Optic. Gratis instalasi[cite: 1].</p>
 
             <!-- MAIN TABS -->
             <div class="pricing-tabs reveal">
@@ -657,7 +695,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="pkg-note">Semua harga sudah termasuk PPN · Gratis Instalasi · Internet Simetris 1:1</p>
+                    <p class="pkg-note">Semua harga sudah termasuk PPN · Gratis Instalasi · Internet Simetris 1:1[cite: 1]</p>
                 </div>
 
                 <!-- AP 9 GET 3 -->
@@ -698,7 +736,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="pkg-note">AP 9 Get 3: Bayar 9 bulan di muka, gratis 3 bulan = total 12 bulan layanan</p>
+                    <p class="pkg-note">AP 9 Get 3: Bayar 9 bulan di muka, gratis 3 bulan = total 12 bulan layanan[cite: 1]</p>
                 </div>
 
                 <!-- AP 12 GET 6 -->
@@ -739,14 +777,14 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="pkg-note">AP 12 Get 6: Bayar 12 bulan di muka, gratis 6 bulan = total 18 bulan · Hemat lebih banyak!</p>
+                    <p class="pkg-note">AP 12 Get 6: Bayar 12 bulan di muka, gratis 6 bulan = total 18 bulan · Hemat lebih banyak![cite: 1]</p>
                 </div>
             </div><!-- /panel-umum -->
 
             <!-- ── AREA LIPPO PROPERTY ── -->
             <div class="pricing-panel" id="panel-lippo">
                 <p class="lippo-note">
-                    🏘️ Paket khusus untuk hunian &amp; kawasan properti milik <strong style="color:#ffaaad;">Lippo Group</strong> — Lippo Village, Lippo Cikarang, St. Moritz, Kemang Village, dll.
+                    🏘️ Paket khusus untuk hunian &amp; kawasan properti milik <strong style="color:#ffaaad;">Lippo Group</strong> — Lippo Village, Lippo Cikarang, St. Moritz, Kemang Village, dll[cite: 1].
                 </p>
                 <div class="pkg-grid">
                     <div class="pkg-card">
@@ -802,13 +840,13 @@
                         </div>
                     </div>
                 </div>
-                <p class="pkg-note">Paket Lippo hanya tersedia di kawasan properti Lippo Group. Hubungi kami untuk cek ketersediaan di lokasi Anda.</p>
+                <p class="pkg-note">Paket Lippo hanya tersedia di kawasan properti Lippo Group. Hubungi kami untuk cek ketersediaan di lokasi Anda[cite: 1].</p>
             </div><!-- /panel-lippo -->
 
             <!-- ── AREA PARTNERSHIP ── -->
             <div class="pricing-panel" id="panel-partner">
                 <p class="lippo-note">
-                    🤝 Paket khusus untuk mitra &amp; area partnership MyRepublic — berlangganan tahunan dengan harga lebih hemat. Cocok untuk properti, perumahan, dan kawasan komersial mitra.
+                    🤝 Paket khusus untuk mitra &amp; area partnership MyRepublic — berlangganan tahunan dengan harga lebih hemat. Cocok untuk properti, perumahan, dan kawasan komersial mitra[cite: 1].
                 </p>
 
                 <!-- Sub-tabs Partnership -->
@@ -820,7 +858,6 @@
                 <!-- ANNUAL 12 BULAN -->
                 <div class="subpanel active" id="partner-annual">
                     <div class="pkg-grid">
-                        <!-- FS001 Value 30 Mbps -->
                         <div class="pkg-card">
                             <div class="pkg-name">Value 30</div>
                             <div class="pkg-speed">30 Mbps</div>
@@ -835,7 +872,6 @@
                                 <span class="pkg-feat">Berlangganan 12 bulan</span>
                             </div>
                         </div>
-                        <!-- FS003 Fast 50 Mbps -->
                         <div class="pkg-card featured">
                             <div class="pkg-badge">POPULER</div>
                             <div class="pkg-name">Fast 50</div>
@@ -851,7 +887,6 @@
                                 <span class="pkg-feat">Berlangganan 12 bulan</span>
                             </div>
                         </div>
-                        <!-- FS006 Nova 100 Mbps -->
                         <div class="pkg-card featured">
                             <div class="pkg-badge">RECOMMENDED</div>
                             <div class="pkg-name">Nova 100</div>
@@ -867,7 +902,6 @@
                                 <span class="pkg-feat">Berlangganan 12 bulan</span>
                             </div>
                         </div>
-                        <!-- FS014 MyGamer 250 Mbps -->
                         <div class="pkg-card">
                             <div class="pkg-name">MyGamer 250</div>
                             <div class="pkg-speed">250 Mbps</div>
@@ -884,7 +918,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="pkg-note">Paket tahunan 12 bulan · Semua harga belum termasuk pajak · Hubungi kami untuk info lebih lanjut</p>
+                    <p class="pkg-note">Paket tahunan 12 bulan · Semua harga belum termasuk pajak · Hubungi kami untuk info lebih lanjut[cite: 1]</p>
                 </div>
 
                 <!-- VALUE 3 BULANAN -->
@@ -907,7 +941,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="pkg-note" style="max-width:480px;">Paket 3 bulanan hanya tersedia untuk Value 30 Mbps di Area Partnership · Belum termasuk pajak</p>
+                    <p class="pkg-note" style="max-width:480px;">Paket 3 bulanan hanya tersedia untuk Value 30 Mbps di Area Partnership · Belum termasuk pajak[cite: 1]</p>
                 </div>
 
             </div><!-- /panel-partner -->
@@ -915,31 +949,69 @@
         </div>
     </section>
 
-    <!-- ── FAQ ── -->
+    <!-- ── MENU KHUSUS KOMPLAIN (DEDICATED SECTION) ── -->
+    <section id="komplain-section" class="komplain-section">
+        <div class="container">
+            <p class="section-label reveal" style="text-align:center;">Pusat Bantuan & Komplain</p>
+            <h2 class="section-title reveal" style="text-align:center;">Layanan Pengaduan & Resolusi Masalah</h2>
+            <p class="section-sub reveal" style="text-align:center; margin: 0 auto 20px;">Mengalami kendala koneksi, tagihan, atau layanan teknis? Kami siap membantu penyelesaian dengan cepat secara real-time.</p>
+            
+            <div class="komplain-card-grid">
+                <div class="komplain-card reveal">
+                    <h3>🤖 AI Asisten Komplain 24/7</h3>
+                    <p>Laporkan gangguan koneksi, masalah router, atau kendala layanan lainnya secara instan melalui sistem AI komplain interaktif kami[cite: 1].</p>
+                    <button class="btn-primary" onclick="document.getElementById('win-komplain').classList.add('show'); document.getElementById('win-paket').classList.remove('show');" style="background:#dc2626; width:100%; justify-content:center;">
+                        📢 Mulai Komplain Sekarang
+                    </button>
+                </div>
+                <div class="komplain-card reveal">
+                    <h3>📞 Kontak Tim Support Resmi</h3>
+                    <p>Butuh penanganan langsung dari petugas support atau teknisi lapangan? Hubungi saluran bantuan resmi MyRepublic kapan saja[cite: 1].</p>
+                    <a href="https://wa.me/6285167313400" class="btn-ghost" style="width:100%; justify-content:center; border-color:#dc2626; color:#ffaaad;">
+                        💬 Hubungi WhatsApp Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FAQ LENGKAP MYREPUBLIC ── -->
     <section id="faq" style="padding:80px 0;background:var(--navy2);border-top:1px solid var(--border-soft);">
         <div class="container">
             <p class="section-label reveal" style="text-align:center">FAQ</p>
-            <h2 class="section-title reveal" style="text-align:center">Pertanyaan Umum</h2>
+            <h2 class="section-title reveal" style="text-align:center">Pertanyaan Umum (FAQ MyRepublic)</h2>
             <div style="max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:10px;">
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah ada biaya instalasi? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Tidak ada! Instalasi MyRepublic sepenuhnya gratis tanpa biaya tersembunyi.</p></div>
+                    <div class="faq-a"><p>Tidak ada! Instalasi MyRepublic sepenuhnya gratis tanpa biaya tersembunyi[cite: 1].</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Berapa lama proses pemasangan? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Proses instalasi biasanya memakan waktu 1–7 hari kerja setelah pendaftaran disetujui, tergantung ketersediaan teknisi di area Anda.</p></div>
+                    <div class="faq-a"><p>Proses instalasi biasanya memakan waktu 1–7 hari kerja setelah pendaftaran disetujui, tergantung ketersediaan teknisi di area Anda[cite: 1].</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah ada kontrak minimal berlangganan? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Paket bulanan tidak terikat kontrak panjang dengan S&K berlaku. Untuk Advance Payment (AP), masa berlangganan sesuai paket yang dipilih dengan keuntungan hemat lebih banyak.</p></div>
+                    <div class="faq-a"><p>Paket bulanan tidak terikat kontrak panjang dengan S&K berlaku. Untuk Advance Payment (AP), masa berlangganan sesuai paket yang dipilih dengan keuntungan hemat lebih banyak[cite: 1].</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apa itu paket Advance Payment 9+3 dan 12+6? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>AP 9+3: bayar 9 bulan di muka, gratis 3 bulan (total 12 bulan). AP 12+6: bayar 12 bulan di muka, gratis 6 bulan (total 18 bulan). Harga per bulan lebih hemat dibanding paket bulanan biasa.</p></div>
+                    <div class="faq-a"><p>AP 9+3: bayar 9 bulan di muka, gratis 3 bulan (total 12 bulan). AP 12+6: bayar 12 bulan di muka, gratis 6 bulan (total 18 bulan). Harga per bulan lebih hemat dibanding paket bulanan biasa[cite: 1].</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-q">Bagaimana cara melakukan pembayaran tagihan MyRepublic? <span class="faq-arrow">+</span></div>
+                    <div class="faq-a"><p>Pembayaran tagihan bulanan dapat dilakukan melalui e-wallet, mobile banking, internet banking, ATM, minimarket rekanan (Indomaret/Alfamart), serta fitur auto-debit.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-q">Apa yang harus dilakukan jika internet mengalami gangguan atau lambat? <span class="faq-arrow">+</span></div>
+                    <div class="faq-a"><p>Coba lakukan restart pada perangkat router/modem Anda terlebih dahulu. Jika kendala masih berlanjut, segera gunakan fitur AI Komplain atau hubungi layanan bantuan kami[cite: 1].</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-q">Bagaimana cara melakukan upgrade kecepatan paket? <span class="faq-arrow">+</span></div>
+                    <div class="faq-a"><p>Anda dapat mengajukan permohonan upgrade paket internet melalui sales resmi, pusat layanan pelanggan, atau menu bantuan interaktif di website ini[cite: 1].</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah tersedia untuk area saya? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Hubungi kami via WhatsApp atau klik tombol Daftar Sekarang untuk cek ketersediaan jaringan di alamat Anda.</p></div>
+                    <div class="faq-a"><p>Hubungi kami via WhatsApp atau klik tombol Daftar Sekarang untuk cek ketersediaan jaringan di alamat Anda[cite: 1].</p></div>
                 </div>
             </div>
         </div>
@@ -950,7 +1022,7 @@
         <div class="container">
             <div class="cta-box reveal">
                 <h2>Siap Berlangganan?</h2>
-                <p>Gratis instalasi. Internet cepat tanpa batas. Daftar sekarang dan nikmati koneksi terbaik.</p>
+                <p>Gratis instalasi. Internet cepat tanpa batas. Daftar sekarang dan nikmati koneksi terbaik[cite: 1].</p>
                 <div class="cta-actions">
                     <a href="https://wa.me/6285167313400" class="btn-primary">💬 Daftar via WhatsApp</a>
                     <a href="#harga" class="btn-ghost">📦 Lihat Paket Lagi</a>
@@ -963,17 +1035,19 @@
     <footer>
         <div class="container">
             <div class="footer-logo">My<span>Republic</span></div>
-            <p>© 2025 MyRepublic Indonesia · Internet Fiber Optic Terbaik · member of Sinarmas</p>
+            <p>© 2026 MyRepublic Indonesia · Internet Fiber Optic Terbaik · member of Sinarmas[cite: 1]</p>
         </div>
     </footer>
 
-    <!-- ── CHAT BUTTONS ── -->
+    <!-- ── DUAL CHAT BUTTONS (CUSTOMIZED SIZES) ── -->
     <div class="chat-buttons">
-        <button class="chat-btn chat-btn-paket" id="btn-paket">
+        <!-- Tombol Tanya Paket (Diperkecil) -->
+        <button class="chat-btn chat-btn-paket" id="btn-paket" title="Tanya Paket Internet">
             <span class="chat-dot"></span> 🎧 Tanya Paket
         </button>
-        <button class="chat-btn chat-btn-komplain" id="btn-komplain">
-            📢 Komplain
+        <!-- Tombol Komplain (Diperbesar + Lebih Menonjol) -->
+        <button class="chat-btn chat-btn-komplain" id="btn-komplain" title="Pusat Komplain & Bantuan">
+            📢 Komplain Kendala
         </button>
     </div>
 
@@ -1060,10 +1134,8 @@
         });
 
         // ── CHAT ENGINE ──
-        // === EDIT WEBHOOK DI SINI ===
         const WEBHOOK_PAKET    = 'https://n8n.aleshatour.my.id/webhook/salesmyrep';
-        const WEBHOOK_KOMPLAIN = 'https://n8n.aleshatour.my.id/webhook/komplain'; // <-- isi URL webhook komplain
-        // ============================
+        const WEBHOOK_KOMPLAIN = 'https://n8n.aleshatour.my.id/webhook/komplain';
 
         const sessionPaket    = 'paket_'    + Math.random().toString(36).substring(7);
         const sessionKomplain = 'komplain_' + Math.random().toString(36).substring(7);
@@ -1152,7 +1224,7 @@
         }
     </script>
 
-    <!-- FAQ styles (inline untuk simplicity) -->
+    <!-- FAQ styles -->
     <style>
         .faq-item { background:var(--navy); border:1px solid var(--border-soft); border-radius:12px; overflow:hidden; }
         .faq-q { padding:18px 22px; font-size:15px; font-weight:600; color:#fff; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:14px; user-select:none; }
