@@ -6,7 +6,7 @@
     <title>MyRepublic — Paket Internet Fiber Optic Terbaik</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style is:global>
+    <style>
         :root {
             --navy:        #0d0a0b;
             --navy2:       #1a0f10;
@@ -60,7 +60,6 @@
             letter-spacing: -0.5px;
             display: flex; align-items: center; gap: 10px;
         }
-        .logo img { height: 36px; width: auto; }
         .nav-links { display: flex; align-items: center; gap: 6px; }
         .nav-links a {
             text-decoration: none; color: var(--text-muted);
@@ -221,8 +220,6 @@
 
         /* ── PRICING ── */
         .pricing { padding: 88px 0; position: relative; }
-
-        /* Main tabs */
         .pricing-tabs { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
         .ptab {
             padding: 10px 22px; border-radius: 50px;
@@ -235,7 +232,6 @@
         .pricing-panel { display: none; }
         .pricing-panel.active { display: block; }
 
-        /* Sub-tabs */
         .pricing-subtabs { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
         .psubtab {
             padding: 7px 16px; border-radius: 8px;
@@ -251,7 +247,6 @@
         .subpanel { display: none; }
         .subpanel.active { display: block; }
 
-        /* Package cards */
         .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 14px; }
         .pkg-card {
             background: var(--navy2); border: 1px solid var(--border-soft);
@@ -291,8 +286,6 @@
             background: rgba(255,255,255,0.03);
             border-radius: 8px; border: 1px solid var(--border-soft);
         }
-
-        /* Lippo area note */
         .lippo-note {
             font-size: 14px; color: var(--text-muted); margin-bottom: 24px;
             padding: 14px 18px;
@@ -301,7 +294,6 @@
             border-radius: 10px;
         }
 
-        /* AP Table */
         .ap-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-soft); }
         .ap-table { width: 100%; border-collapse: collapse; font-size: 13px; }
         .ap-table thead th {
@@ -324,36 +316,8 @@
         }
         .ap-na { color: #ef4444 !important; font-weight: 700; }
 
-        /* ── DEDICATED KOMPLAIN SECTION ── */
-        .komplain-section {
-            padding: 80px 0;
-            background: var(--navy2);
-            border-top: 1px solid var(--border-soft);
-            border-bottom: 1px solid var(--border-soft);
-        }
-        .komplain-card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .komplain-card {
-            background: var(--navy);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .komplain-card:hover { transform: translateY(-4px); border-color: #dc2626; }
-        .komplain-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; margin-bottom: 10px; }
-        .komplain-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-
         /* ── CTA BAND ── */
-        .cta-band {
-            padding: 72px 0;
-            border-top: 1px solid var(--border-soft);
-        }
+        .cta-band { padding: 72px 0; border-top: 1px solid var(--border-soft); }
         .cta-box {
             background: var(--navy2); border: 1px solid var(--border);
             border-radius: 20px; padding: 60px 48px; text-align: center;
@@ -375,115 +339,100 @@
         .footer-logo span { color: var(--accent); }
         footer p { font-size: 13px; color: var(--text-muted); }
 
-        /* ── DUAL CHAT BUTTONS (MODIFIED SIZES) ── */
-        .chat-buttons {
-            position: fixed; bottom: 28px; right: 28px;
-            display: flex; flex-direction: column; gap: 12px;
-            align-items: flex-end; z-index: 1001;
+        /* ── POPUP PILIHAN (WELCOME MODAL) ── */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 2000;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(6px);
+            display: none; align-items: center; justify-content: center;
+            padding: 20px;
         }
-        .chat-btn {
-            display: flex; align-items: center; gap: 8px;
-            border: none; border-radius: 50px;
-            cursor: pointer; transition: all 0.25s;
-            font-family: 'Inter', sans-serif; white-space: nowrap;
-        }
-        /* Tombol Tanya Paket (Diperkecil)[cite: 1] */
-        .chat-btn-paket { 
-            background: var(--accent); 
-            color: white; 
-            padding: 8px 14px; 
-            font-size: 11px; 
-            font-weight: 600;
-            opacity: 0.85;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .chat-btn-paket:hover { opacity: 1; transform: translateY(-1px); }
-
-        /* Tombol Komplain (Diperbesar + Lebih Menonjol)[cite: 1] */
-        .chat-btn-komplain { 
-            background: #dc2626; 
-            color: white; 
-            padding: 16px 28px; 
-            font-size: 15px; 
-            font-weight: 800;
-            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.6);
-            animation: pulse-komplain 2s infinite;
-        }
-        .chat-btn-komplain:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(220, 38, 38, 0.8); }
-        @keyframes pulse-komplain {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-            50% { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
-        }
-
-        .chat-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
-
-        /* ── CHAT WINDOWS ── */
-        .chat-window {
-            position: fixed; bottom: 100px; right: 28px;
-            width: 380px; height: 540px;
+        .modal-overlay.show { display: flex; animation: fadeIn 0.25s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal {
             background: var(--navy2); border: 1px solid var(--border);
-            border-radius: 20px; display: none; flex-direction: column;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-            z-index: 1002; overflow: hidden; font-family: 'Inter', sans-serif;
+            border-radius: 22px; width: 100%; max-width: 460px;
+            max-height: 92vh; overflow-y: auto;
+            padding: 32px 28px 28px; position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            animation: popIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
         }
-        .chat-window.show { display: flex; animation: slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1); }
-        @keyframes slideUp { from { opacity:0; transform:translateY(16px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } }
-
-        .chat-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .chat-header.paket-header   { background: linear-gradient(135deg, #8b0000, #e30613); }
-        .chat-header.komplain-header { background: linear-gradient(135deg, #6b0000, #991b1b); }
-
-        .chat-agent { display: flex; align-items: center; gap: 12px; }
-        .agent-avatar { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 18px; }
-        .agent-name { font-weight: 700; font-size: 14px; color: white; }
-        .agent-status { font-size: 12px; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 5px; }
-        .status-online { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; }
-        .close-chat { background: none; border: none; color: rgba(255,255,255,0.7); font-size: 22px; cursor: pointer; padding: 0 4px; line-height: 1; }
-        .close-chat:hover { color: white; }
-
-        .chat-body { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: var(--navy); }
-        .chat-body::-webkit-scrollbar { width: 4px; }
-        .chat-body::-webkit-scrollbar-thumb { background: var(--border-soft); border-radius: 2px; }
-
-        .msg { padding: 10px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; max-width: 82%; word-break: break-word; }
-        .msg.bot  { background: var(--navy2); color: var(--text); border: 1px solid var(--border-soft); border-bottom-left-radius: 4px; align-self: flex-start; }
-        .msg.user { background: #b91c1c; color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
-        .msg.system { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25); color: #fbbf24; font-size: 12px; border-radius: 8px; align-self: center; max-width: 90%; text-align: center; padding: 8px 12px; }
-
-        .typing { display: flex; gap: 4px; align-items: center; padding: 12px 16px; background: var(--navy2); border: 1px solid var(--border-soft); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; }
-        .typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted); animation: bounce 1.4s infinite; }
-        .typing span:nth-child(2) { animation-delay: 0.2s; }
-        .typing span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes bounce { 0%,80%,100% { transform:translateY(0); } 40% { transform:translateY(-6px); } }
-
-        .chat-footer { padding: 12px 14px; border-top: 1px solid var(--border-soft); display: flex; gap: 8px; background: var(--navy2); }
-        .chat-input {
-            flex: 1; background: var(--navy); border: 1px solid var(--border-soft);
-            color: var(--text); padding: 10px 14px; border-radius: 10px;
-            font-size: 13.5px; outline: none; transition: border-color 0.2s;
-            font-family: 'Inter', sans-serif;
+        @keyframes popIn { from { opacity:0; transform:translateY(20px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+        .modal-close {
+            position: absolute; top: 14px; right: 16px;
+            background: none; border: none; color: var(--text-muted);
+            font-size: 26px; line-height: 1; cursor: pointer;
         }
-        .chat-input:focus { border-color: var(--accent); }
-        .chat-input::placeholder { color: var(--text-muted); }
-        .chat-send { background: var(--accent); color: white; border: none; width: 42px; border-radius: 10px; cursor: pointer; font-size: 16px; transition: background 0.2s; }
-        .chat-send:hover { background: var(--accent2); }
-        .chat-send.dark { background: #991b1b; }
-        .chat-send.dark:hover { background: #7f1d1d; }
+        .modal-close:hover { color: #fff; }
+        .modal-logo { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 6px; }
+        .modal-logo span { color: var(--accent); }
+        .modal h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; text-align: center; margin-bottom: 6px; }
+        .modal-sub { font-size: 14px; color: var(--text-muted); text-align: center; margin-bottom: 22px; }
+        .choice-btn {
+            width: 100%; display: flex; align-items: center; gap: 14px;
+            text-align: left; cursor: pointer;
+            background: var(--navy); border: 1px solid var(--border-soft);
+            border-radius: 14px; padding: 16px 18px; margin-bottom: 12px;
+            color: var(--text); font-family: 'Inter', sans-serif;
+            transition: all 0.22s;
+        }
+        .choice-btn:hover { border-color: var(--accent); background: rgba(227,6,19,0.08); transform: translateY(-2px); }
+        .choice-num {
+            flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px;
+            background: var(--accent); color: #fff; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .choice-text strong { display: block; font-size: 15px; color: #fff; margin-bottom: 2px; }
+        .choice-text span { font-size: 12.5px; color: var(--text-muted); }
+
+        .info-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+        .info-item {
+            display: block; text-decoration: none;
+            background: var(--navy); border: 1px solid var(--border-soft);
+            border-radius: 12px; padding: 13px 16px;
+            transition: all 0.2s;
+        }
+        a.info-item:hover { border-color: var(--accent); background: rgba(227,6,19,0.08); }
+        .info-item strong { display: block; font-size: 14px; color: #fff; margin-bottom: 2px; }
+        .info-item span { font-size: 13px; color: #ffaaad; word-break: break-all; }
+        .info-item p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+        .info-item p b { color: #fff; }
+        .btn-ig {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: linear-gradient(135deg, #c2185b, #e91e8c);
+            color: white; font-weight: 700; font-size: 14px;
+            padding: 12px 16px; border-radius: 12px; text-decoration: none;
+            box-shadow: 0 4px 16px rgba(233,30,140,0.3);
+        }
+        .btn-back {
+            display: block; width: 100%; margin-top: 12px; padding: 10px;
+            background: transparent; border: 1px solid var(--border-soft);
+            border-radius: 10px; color: var(--text-muted); cursor: pointer;
+            font-size: 13px; font-family: 'Inter', sans-serif;
+        }
+        .btn-back:hover { color: #fff; border-color: var(--accent); }
+        .modal-step { display: none; }
+        .modal-step.active { display: block; }
 
         /* ── REVEAL ANIMATION ── */
-        @keyframes fadeInUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
         .reveal { opacity:0; transform:translateY(24px); transition: opacity .6s ease, transform .6s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
 
-        @media (max-width: 480px) {
-            .chat-window { width: calc(100vw - 24px); right: 12px; bottom: 84px; height: 480px; }
-            .chat-buttons { right: 12px; bottom: 12px; }
-            .pkg-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .pkg-grid { grid-template-columns: 1fr 1fr; }
-        }
+        @media (max-width: 480px) { .pkg-grid { grid-template-columns: 1fr; } .modal { padding: 28px 20px 22px; } }
+        @media (max-width: 768px) { .pkg-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .pkg-grid { grid-template-columns: 1fr; } }
         @media (prefers-reduced-motion: reduce) { *, .orb { animation: none !important; transition: none !important; } }
+
+        /* FAQ */
+        .faq-item { background:var(--navy); border:1px solid var(--border-soft); border-radius:12px; overflow:hidden; }
+        .faq-q { padding:18px 22px; font-size:15px; font-weight:600; color:#fff; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:14px; user-select:none; }
+        .faq-q:hover { color:var(--accent2); }
+        .faq-arrow { font-size:18px; color:var(--accent); transition:transform .3s; flex-shrink:0; }
+        .faq-item.open .faq-arrow { transform:rotate(45deg); }
+        .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+        .faq-item.open .faq-a { max-height:200px; }
+        .faq-a p { padding:0 22px 18px; font-size:14px; color:var(--text-muted); line-height:1.8; }
     </style>
 </head>
 <body>
@@ -500,7 +449,7 @@
             <div class="nav-links">
                 <a href="#harga">Paket</a>
                 <a href="#keunggulan">Keunggulan</a>
-                <a href="#komplain-section">Pusat Komplain</a>
+                <a href="#" data-open-bantuan>Pusat Bantuan</a>
                 <a href="#faq">FAQ</a>
                 <a href="https://wa.me/6285167313400" class="btn-nav-cta">Daftar Sekarang</a>
             </div>
@@ -516,7 +465,7 @@
                 Internet Cepat,<br>
                 <span class="h1-accent">Tanpa Batas Kuota</span>
             </h1>
-            <p>MyRepublic hadir dengan teknologi 100% Full Fiber Optic — koneksi simetris 1:1, stabil, dan gratis instalasi untuk rumah Anda[cite: 1].</p>
+            <p>MyRepublic hadir dengan teknologi 100% Full Fiber Optic — koneksi simetris 1:1, stabil, dan gratis instalasi untuk rumah Anda.</p>
 
             <div class="hero-badges">
                 <span class="hero-badge"><span class="ok">✓</span> Gratis Instalasi</span>
@@ -563,27 +512,27 @@
                 <div class="k-item">
                     <div class="k-icon">⚡</div>
                     <div class="k-title">Kecepatan Penuh</div>
-                    <div class="k-desc">Upload & download sama cepat, tidak ada throttling[cite: 1].</div>
+                    <div class="k-desc">Upload & download sama cepat, tidak ada throttling.</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">🛡️</div>
                     <div class="k-title">Tahan Cuaca Ekstrim</div>
-                    <div class="k-desc">Fiber optic tidak terpengaruh hujan & petir[cite: 1].</div>
+                    <div class="k-desc">Fiber optic tidak terpengaruh hujan & petir.</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">📡</div>
                     <div class="k-title">Jaringan Stabil</div>
-                    <div class="k-desc">Latensi rendah, cocok untuk gaming & video call[cite: 1].</div>
+                    <div class="k-desc">Latensi rendah, cocok untuk gaming & video call.</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">🔧</div>
                     <div class="k-title">Gratis Instalasi</div>
-                    <div class="k-desc">Tidak ada biaya pemasangan tersembunyi[cite: 1].</div>
+                    <div class="k-desc">Tidak ada biaya pemasangan tersembunyi.</div>
                 </div>
                 <div class="k-item">
                     <div class="k-icon">💰</div>
                     <div class="k-title">Harga Terjangkau</div>
-                    <div class="k-desc">Paket mulai Rp 233.100/bulan sudah termasuk PPN[cite: 1].</div>
+                    <div class="k-desc">Paket mulai Rp 233.100/bulan sudah termasuk PPN.</div>
                 </div>
             </div>
         </div>
@@ -594,7 +543,7 @@
         <div class="container">
             <p class="section-label reveal">Paket Internet</p>
             <h2 class="section-title reveal">Pilih Paket MyRepublic</h2>
-            <p class="section-sub reveal">Internet simetris 1:1 Upload &amp; Download, tanpa batas kuota, 100% Full Fiber Optic. Gratis instalasi[cite: 1].</p>
+            <p class="section-sub reveal">Internet simetris 1:1 Upload &amp; Download, tanpa batas kuota, 100% Full Fiber Optic. Gratis instalasi.</p>
 
             <!-- MAIN TABS -->
             <div class="pricing-tabs reveal">
@@ -695,7 +644,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="pkg-note">Semua harga sudah termasuk PPN · Gratis Instalasi · Internet Simetris 1:1[cite: 1]</p>
+                    <p class="pkg-note">Semua harga sudah termasuk PPN · Gratis Instalasi · Internet Simetris 1:1</p>
                 </div>
 
                 <!-- AP 9 GET 3 -->
@@ -736,7 +685,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="pkg-note">AP 9 Get 3: Bayar 9 bulan di muka, gratis 3 bulan = total 12 bulan layanan[cite: 1]</p>
+                    <p class="pkg-note">AP 9 Get 3: Bayar 9 bulan di muka, gratis 3 bulan = total 12 bulan layanan</p>
                 </div>
 
                 <!-- AP 12 GET 6 -->
@@ -777,14 +726,14 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="pkg-note">AP 12 Get 6: Bayar 12 bulan di muka, gratis 6 bulan = total 18 bulan · Hemat lebih banyak![cite: 1]</p>
+                    <p class="pkg-note">AP 12 Get 6: Bayar 12 bulan di muka, gratis 6 bulan = total 18 bulan · Hemat lebih banyak!</p>
                 </div>
             </div><!-- /panel-umum -->
 
             <!-- ── AREA LIPPO PROPERTY ── -->
             <div class="pricing-panel" id="panel-lippo">
                 <p class="lippo-note">
-                    🏘️ Paket khusus untuk hunian &amp; kawasan properti milik <strong style="color:#ffaaad;">Lippo Group</strong> — Lippo Village, Lippo Cikarang, St. Moritz, Kemang Village, dll[cite: 1].
+                    🏘️ Paket khusus untuk hunian &amp; kawasan properti milik <strong style="color:#ffaaad;">Lippo Group</strong> — Lippo Village, Lippo Cikarang, St. Moritz, Kemang Village, dll.
                 </p>
                 <div class="pkg-grid">
                     <div class="pkg-card">
@@ -840,22 +789,20 @@
                         </div>
                     </div>
                 </div>
-                <p class="pkg-note">Paket Lippo hanya tersedia di kawasan properti Lippo Group. Hubungi kami untuk cek ketersediaan di lokasi Anda[cite: 1].</p>
+                <p class="pkg-note">Paket Lippo hanya tersedia di kawasan properti Lippo Group. Hubungi kami untuk cek ketersediaan di lokasi Anda.</p>
             </div><!-- /panel-lippo -->
 
             <!-- ── AREA PARTNERSHIP ── -->
             <div class="pricing-panel" id="panel-partner">
                 <p class="lippo-note">
-                    🤝 Paket khusus untuk mitra &amp; area partnership MyRepublic — berlangganan tahunan dengan harga lebih hemat. Cocok untuk properti, perumahan, dan kawasan komersial mitra[cite: 1].
+                    🤝 Paket khusus untuk mitra &amp; area partnership MyRepublic — berlangganan tahunan dengan harga lebih hemat. Cocok untuk properti, perumahan, dan kawasan komersial mitra.
                 </p>
 
-                <!-- Sub-tabs Partnership -->
                 <div class="pricing-subtabs" id="subtabs-partner">
                     <button class="psubtab active" data-tab="partner" data-sub="annual">Tahunan (12 Bulan)</button>
                     <button class="psubtab" data-tab="partner" data-sub="value3">Value 3 Bulanan</button>
                 </div>
 
-                <!-- ANNUAL 12 BULAN -->
                 <div class="subpanel active" id="partner-annual">
                     <div class="pkg-grid">
                         <div class="pkg-card">
@@ -918,10 +865,9 @@
                             </div>
                         </div>
                     </div>
-                    <p class="pkg-note">Paket tahunan 12 bulan · Semua harga belum termasuk pajak · Hubungi kami untuk info lebih lanjut[cite: 1]</p>
+                    <p class="pkg-note">Paket tahunan 12 bulan · Semua harga belum termasuk pajak · Hubungi kami untuk info lebih lanjut</p>
                 </div>
 
-                <!-- VALUE 3 BULANAN -->
                 <div class="subpanel" id="partner-value3">
                     <div style="max-width:480px;">
                         <div class="pkg-card featured" style="max-width:360px;">
@@ -941,265 +887,13 @@
                             </div>
                         </div>
                     </div>
-                    <p class="pkg-note" style="max-width:480px;">Paket 3 bulanan hanya tersedia untuk Value 30 Mbps di Area Partnership · Belum termasuk pajak[cite: 1]</p>
+                    <p class="pkg-note" style="max-width:480px;">Paket 3 bulanan hanya tersedia untuk Value 30 Mbps di Area Partnership · Belum termasuk pajak</p>
                 </div>
-
             </div><!-- /panel-partner -->
-
         </div>
     </section>
 
-    <!-- Section Bantuan & Komplain MyRepublic -->
-    <section id="komplain-section" style="
-  padding: 88px 0;
-  background: var(--navy);
-  border-top: 1px solid var(--border-soft);
-  border-bottom: 1px solid var(--border-soft);
-  position: relative;
-">
-  <!-- subtle glow -->
-  <div style="
-    position:absolute; top:0; left:50%; transform:translateX(-50%);
-    width:700px; height:300px;
-    background: radial-gradient(ellipse, rgba(227,6,19,0.07) 0%, transparent 70%);
-    pointer-events:none;
-  "></div>
-
-  <div class="container" style="position:relative; z-index:1;">
-
-    <!-- Header -->
-    <p class="section-label reveal" style="text-align:center;">Bantuan & Pengaduan</p>
-    <h2 class="section-title reveal" style="text-align:center;">Pusat Komplain MyRepublic</h2>
-    <p class="section-sub reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
-      Ada gangguan? Temukan solusi cepat atau hubungi tim teknis kami langsung.
-    </p>
-
-    <!-- CTA Banner -->
-    <div class="reveal" style="
-      background: linear-gradient(135deg, rgba(220,38,38,0.18), rgba(139,0,0,0.25));
-      border: 1px solid rgba(220,38,38,0.4);
-      border-radius: 16px;
-      padding: 28px 32px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 40px;
-    ">
-      <div>
-        <span style="
-          display: inline-block;
-          background: #dc2626;
-          color: white;
-          font-size: 10px;
-          font-weight: 800;
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          padding: 3px 10px;
-          border-radius: 50px;
-          margin-bottom: 10px;
-        ">Tim Support Teknis</span>
-        <h3 style="
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 20px;
-          font-weight: 700;
-          color: #fff;
-          margin: 0 0 6px;
-        ">Mengalami Gangguan Internet?</h3>
-        <p style="font-size: 14px; color: var(--text-muted); margin: 0;">
-          Layanan aduan & bantuan teknis resmi — hubungi langsung via DM Instagram.
-        </p>
-      </div>
-      <a href="https://www.instagram.com/myrepublicindonesia/"
-         target="_blank" rel="noopener noreferrer"
-         style="
-           display: inline-flex;
-           align-items: center;
-           gap: 10px;
-           background: linear-gradient(135deg, #c2185b, #e91e8c);
-           color: white;
-           font-weight: 700;
-           font-size: 14px;
-           padding: 13px 22px;
-           border-radius: 12px;
-           text-decoration: none;
-           white-space: nowrap;
-           transition: transform 0.2s, box-shadow 0.2s;
-           box-shadow: 0 4px 18px rgba(233,30,140,0.35);
-         "
-         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 28px rgba(233,30,140,0.5)'"
-         onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 18px rgba(233,30,140,0.35)'"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-        DM Instagram CS
-      </a>
-    </div>
-
-    <!-- 3 Info Cards -->
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    ">
-
-      <!-- Card 1: Troubleshoot -->
-      <div class="reveal" style="
-        background: var(--navy2);
-        border: 1px solid var(--border-soft);
-        border-radius: 16px;
-        padding: 26px 24px;
-        transition: border-color 0.25s, transform 0.25s;
-      "
-      onmouseover="this.style.borderColor='rgba(227,6,19,0.5)';this.style.transform='translateY(-3px)'"
-      onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'"
-      >
-        <div style="font-size: 28px; margin-bottom: 12px;">⚡</div>
-        <h4 style="
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 16px; font-weight: 700;
-          color: #fff; margin-bottom: 14px;
-        ">Troubleshoot & Indikator Router</h4>
-
-        <div style="display:flex;flex-direction:column;gap:12px;">
-          <div style="
-            background: rgba(239,68,68,0.08);
-            border: 1px solid rgba(239,68,68,0.2);
-            border-radius: 10px;
-            padding: 12px 14px;
-          ">
-            <div style="font-size:12px;font-weight:700;color:#fca5a5;margin-bottom:4px;">🔴 Lampu Merah / LOS</div>
-            <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">
-              Sinyal optik turun/putus. Matikan tombol Power 30 detik lalu nyalakan kembali.
-            </div>
-          </div>
-          <div style="
-            background: rgba(251,191,36,0.06);
-            border: 1px solid rgba(251,191,36,0.15);
-            border-radius: 10px;
-            padding: 12px 14px;
-          ">
-            <div style="font-size:12px;font-weight:700;color:#fcd34d;margin-bottom:4px;">🐢 Internet Lambat</div>
-            <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">
-              Periksa jumlah perangkat, bersihkan cache browser, atau jauhkan router dari tembok tebal.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: Setting Wi-Fi -->
-      <div class="reveal" style="
-        background: var(--navy2);
-        border: 1px solid var(--border-soft);
-        border-radius: 16px;
-        padding: 26px 24px;
-        transition: border-color 0.25s, transform 0.25s;
-      "
-      onmouseover="this.style.borderColor='rgba(227,6,19,0.5)';this.style.transform='translateY(-3px)'"
-      onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'"
-      >
-        <div style="font-size: 28px; margin-bottom: 12px;">⚙️</div>
-        <h4 style="
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 16px; font-weight: 700;
-          color: #fff; margin-bottom: 14px;
-        ">Panduan Manual & Setting Wi-Fi</h4>
-
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="font-size:13px;color:var(--text-muted);line-height:1.7;">
-            Akses dashboard router melalui browser dengan membuka:
-          </div>
-          <div style="
-            background: rgba(227,6,19,0.1);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-family: monospace;
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffaaad;
-            text-align: center;
-            letter-spacing: 1px;
-          ">192.168.1.1</div>
-          <div style="font-size:13px;color:var(--text-muted);line-height:1.7;">
-            Masuk ke menu <strong style="color:#fff;">WLAN / Network Settings</strong> untuk ubah nama Wi-Fi (SSID) dan password.
-          </div>
-          <div style="
-            display:inline-flex;align-items:center;gap:6px;
-            font-size:12px;font-weight:600;color:#4ade80;
-            background:rgba(74,222,128,0.08);
-            border:1px solid rgba(74,222,128,0.2);
-            padding:6px 10px;border-radius:6px;
-          ">✓ Ganti password rutin untuk keamanan</div>
-        </div>
-      </div>
-
-      <!-- Card 3: Belum Solusi -->
-      <div class="reveal" style="
-        background: var(--navy2);
-        border: 1px solid var(--border-soft);
-        border-radius: 16px;
-        padding: 26px 24px;
-        transition: border-color 0.25s, transform 0.25s;
-      "
-      onmouseover="this.style.borderColor='rgba(227,6,19,0.5)';this.style.transform='translateY(-3px)'"
-      onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'"
-      >
-        <div style="font-size: 28px; margin-bottom: 12px;">📩</div>
-        <h4 style="
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 16px; font-weight: 700;
-          color: #fff; margin-bottom: 10px;
-        ">Belum Menemukan Solusi?</h4>
-        <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;">
-          Tim teknis MyRepublic siap membantu menyelesaikan gangguan jaringan atau masalah perangkat Anda secara langsung.
-        </p>
-
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="https://www.instagram.com/myrepublicindonesia/"
-             target="_blank" rel="noopener noreferrer"
-             style="
-               display:flex;align-items:center;justify-content:center;gap:8px;
-               background: linear-gradient(135deg, #c2185b, #e91e8c);
-               color:white;font-weight:700;font-size:13px;
-               padding:11px 16px;border-radius:10px;
-               text-decoration:none;
-               box-shadow:0 4px 14px rgba(233,30,140,0.3);
-               transition:transform 0.2s;
-             "
-             onmouseover="this.style.transform='translateY(-2px)'"
-             onmouseout="this.style.transform='translateY(0)'"
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            DM Instagram CS
-          </a>
-          <button
-            onclick="document.getElementById('btn-komplain').click()"
-            style="
-              display:flex;align-items:center;justify-content:center;gap:8px;
-              background:rgba(220,38,38,0.15);
-              border:1px solid rgba(220,38,38,0.4);
-              color:#ffaaad;font-weight:700;font-size:13px;
-              padding:11px 16px;border-radius:10px;
-              cursor:pointer;
-              transition:background 0.2s;
-              font-family:'Inter',sans-serif;
-            "
-            onmouseover="this.style.background='rgba(220,38,38,0.28)'"
-            onmouseout="this.style.background='rgba(220,38,38,0.15)'"
-          >
-            📢 Chat AI Komplain
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- ── FAQ LENGKAP MYREPUBLIC ── -->
+    <!-- ── FAQ ── -->
     <section id="faq" style="padding:80px 0;background:var(--navy2);border-top:1px solid var(--border-soft);">
         <div class="container">
             <p class="section-label reveal" style="text-align:center">FAQ</p>
@@ -1207,19 +901,19 @@
             <div style="max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:10px;">
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah ada biaya instalasi? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Tidak ada! Instalasi MyRepublic sepenuhnya gratis tanpa biaya tersembunyi[cite: 1].</p></div>
+                    <div class="faq-a"><p>Tidak ada! Instalasi MyRepublic sepenuhnya gratis tanpa biaya tersembunyi.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Berapa lama proses pemasangan? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Proses instalasi biasanya memakan waktu 1–7 hari kerja setelah pendaftaran disetujui, tergantung ketersediaan teknisi di area Anda[cite: 1].</p></div>
+                    <div class="faq-a"><p>Proses instalasi biasanya memakan waktu 1–7 hari kerja setelah pendaftaran disetujui, tergantung ketersediaan teknisi di area Anda.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah ada kontrak minimal berlangganan? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Paket bulanan tidak terikat kontrak panjang dengan S&K berlaku. Untuk Advance Payment (AP), masa berlangganan sesuai paket yang dipilih dengan keuntungan hemat lebih banyak[cite: 1].</p></div>
+                    <div class="faq-a"><p>Paket bulanan tidak terikat kontrak panjang dengan S&K berlaku. Untuk Advance Payment (AP), masa berlangganan sesuai paket yang dipilih dengan keuntungan hemat lebih banyak.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apa itu paket Advance Payment 9+3 dan 12+6? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>AP 9+3: bayar 9 bulan di muka, gratis 3 bulan (total 12 bulan). AP 12+6: bayar 12 bulan di muka, gratis 6 bulan (total 18 bulan). Harga per bulan lebih hemat dibanding paket bulanan biasa[cite: 1].</p></div>
+                    <div class="faq-a"><p>AP 9+3: bayar 9 bulan di muka, gratis 3 bulan (total 12 bulan). AP 12+6: bayar 12 bulan di muka, gratis 6 bulan (total 18 bulan). Harga per bulan lebih hemat dibanding paket bulanan biasa.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Bagaimana cara melakukan pembayaran tagihan MyRepublic? <span class="faq-arrow">+</span></div>
@@ -1227,15 +921,15 @@
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apa yang harus dilakukan jika internet mengalami gangguan atau lambat? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Coba lakukan restart pada perangkat router/modem Anda terlebih dahulu. Jika kendala masih berlanjut, segera gunakan fitur AI Komplain atau hubungi layanan bantuan kami[cite: 1].</p></div>
+                    <div class="faq-a"><p>Coba restart perangkat router/modem Anda terlebih dahulu. Jika kendala masih berlanjut, buka <a href="#" data-open-bantuan style="color:var(--accent2);">Pusat Bantuan</a> untuk panduan dan kontak agent kami.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Bagaimana cara melakukan upgrade kecepatan paket? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Anda dapat mengajukan permohonan upgrade paket internet melalui sales resmi, pusat layanan pelanggan, atau menu bantuan interaktif di website ini[cite: 1].</p></div>
+                    <div class="faq-a"><p>Anda dapat mengajukan permohonan upgrade paket internet melalui sales resmi atau pusat layanan pelanggan MyRepublic.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <div class="faq-q">Apakah tersedia untuk area saya? <span class="faq-arrow">+</span></div>
-                    <div class="faq-a"><p>Hubungi kami via WhatsApp atau klik tombol Daftar Sekarang untuk cek ketersediaan jaringan di alamat Anda[cite: 1].</p></div>
+                    <div class="faq-a"><p>Hubungi kami via WhatsApp atau klik tombol Daftar Sekarang untuk cek ketersediaan jaringan di alamat Anda.</p></div>
                 </div>
             </div>
         </div>
@@ -1246,7 +940,7 @@
         <div class="container">
             <div class="cta-box reveal">
                 <h2>Siap Berlangganan?</h2>
-                <p>Gratis instalasi. Internet cepat tanpa batas. Daftar sekarang dan nikmati koneksi terbaik[cite: 1].</p>
+                <p>Gratis instalasi. Internet cepat tanpa batas. Daftar sekarang dan nikmati koneksi terbaik.</p>
                 <div class="cta-actions">
                     <a href="https://wa.me/6285167313400" class="btn-primary">💬 Daftar via WhatsApp</a>
                     <a href="#harga" class="btn-ghost">📦 Lihat Paket Lagi</a>
@@ -1259,61 +953,74 @@
     <footer>
         <div class="container">
             <div class="footer-logo">My<span>Republic</span></div>
-            <p>© 2026 MyRepublic Indonesia · Internet Fiber Optic Terbaik · member of Sinarmas[cite: 1]</p>
+            <p>© 2026 MyRepublic Indonesia · Internet Fiber Optic Terbaik · member of Sinarmas</p>
         </div>
     </footer>
 
-    <!-- ── DUAL CHAT BUTTONS (CUSTOMIZED SIZES) ── -->
-    <div class="chat-buttons">
-        <!-- Tombol Tanya Paket (Diperkecil) -->
-        <button class="chat-btn chat-btn-paket" id="btn-paket" title="Tanya Paket Internet">
-            <span class="chat-dot"></span> 🎧 Tanya Paket
-        </button>
-        <!-- Tombol Komplain (Diperbesar + Lebih Menonjol) -->
-        <button class="chat-btn chat-btn-komplain" id="btn-komplain" title="Pusat Komplain & Bantuan">
-            📢 Komplain Kendala
-        </button>
-    </div>
+    <!-- ══════════ POPUP PILIHAN ══════════ -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <button class="modal-close" id="modal-close" aria-label="Tutup">×</button>
 
-    <!-- CHAT PAKET -->
-    <div class="chat-window" id="win-paket">
-        <div class="chat-header paket-header">
-            <div class="chat-agent">
-                <div class="agent-avatar">🤖</div>
-                <div>
-                    <div class="agent-name">AI Paket MyRepublic</div>
-                    <div class="agent-status"><span class="status-online"></span> Online sekarang</div>
-                </div>
+            <!-- STEP 1: Pilihan awal -->
+            <div class="modal-step active" id="step-pilih">
+                <div class="modal-logo">My<span>Republic</span></div>
+                <h3 id="modal-title">Selamat datang! Ada yang bisa kami bantu?</h3>
+                <p class="modal-sub">Silakan pilih salah satu di bawah ini</p>
+
+                <button class="choice-btn" id="choice-baru">
+                    <span class="choice-num">1</span>
+                    <span class="choice-text">
+                        <strong>Berlangganan Baru WiFi MyRepublic</strong>
+                        <span>Lihat paket &amp; harga internet fiber optic</span>
+                    </span>
+                </button>
+
+                <button class="choice-btn" id="choice-bantuan">
+                    <span class="choice-num">2</span>
+                    <span class="choice-text">
+                        <strong>Komplain Kendala, Tanya Tagihan dan Informasi Lainnya</strong>
+                        <span>Cek status, panduan pembayaran &amp; WiFi, hubungi agent</span>
+                    </span>
+                </button>
             </div>
-            <button class="close-chat" data-target="win-paket">×</button>
-        </div>
-        <div class="chat-body" id="msg-paket"></div>
-        <div class="chat-footer">
-            <input type="text" id="input-paket" class="chat-input" placeholder="Tanya soal paket internet..." autocomplete="off" />
-            <button class="chat-send" id="send-paket">➤</button>
-        </div>
-    </div>
 
-    <!-- CHAT KOMPLAIN -->
-    <div class="chat-window" id="win-komplain">
-        <div class="chat-header komplain-header">
-            <div class="chat-agent">
-                <div class="agent-avatar">📋</div>
-                <div>
-                    <div class="agent-name">AI Komplain MyRepublic</div>
-                    <div class="agent-status"><span class="status-online"></span> Siap membantu</div>
+            <!-- STEP 2: Informasi bantuan -->
+            <div class="modal-step" id="step-bantuan">
+                <h3>Pusat Bantuan MyRepublic</h3>
+                <p class="modal-sub">Pilih layanan yang Anda butuhkan</p>
+
+                <div class="info-list">
+                    <a class="info-item" href="https://support.myrepublic.co.id" target="_blank" rel="noopener noreferrer">
+                        <strong>🔎 Cek Status Perangkat &amp; Tagihan</strong>
+                        <span>support.myrepublic.co.id</span>
+                    </a>
+                    <a class="info-item" href="https://myrepublic.co.id/help?tab=metode%20pembayaran" target="_blank" rel="noopener noreferrer">
+                        <strong>💳 Panduan Pembayaran</strong>
+                        <span>myrepublic.co.id/help?tab=metode%20pembayaran</span>
+                    </a>
+                    <a class="info-item" href="https://myrepublic.co.id/help?tab=panduan" target="_blank" rel="noopener noreferrer">
+                        <strong>📶 Panduan WiFi (SSID &amp; Password)</strong>
+                        <span>myrepublic.co.id/help?tab=panduan</span>
+                    </a>
+                    <div class="info-item">
+                        <strong>📞 Butuh bantuan Agent?</strong>
+                        <p>Silakan hubungi MyRepublic melalui <b>WhatsApp Call (bebas pulsa)</b> di nomor
+                            <a href="https://wa.me/6288981500818" target="_blank" rel="noopener noreferrer" style="color:#ffaaad;font-weight:700;">088981500818</a>,
+                            atau tekan ikon 📞 Panggil / Call di atas.</p>
+                    </div>
                 </div>
+
+                <a class="btn-ig" href="https://www.instagram.com/myrepublicindonesia/" target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Atau DM Kami di Instagram
+                </a>
+                <button class="btn-back" id="btn-back">← Kembali ke pilihan</button>
             </div>
-            <button class="close-chat" data-target="win-komplain">×</button>
-        </div>
-        <div class="chat-body" id="msg-komplain"></div>
-        <div class="chat-footer">
-            <input type="text" id="input-komplain" class="chat-input" placeholder="Ceritakan masalah Anda..." autocomplete="off" />
-            <button class="chat-send dark" id="send-komplain">➤</button>
         </div>
     </div>
 
-    <script is:inline>
+    <script>
         // ── FAQ ACCORDION ──
         document.querySelectorAll('.faq-q').forEach(q => {
             q.addEventListener('click', () => {
@@ -1357,107 +1064,54 @@
             });
         });
 
-        // ── CHAT ENGINE ──
-        const WEBHOOK_PAKET    = 'https://n8n.aleshatour.my.id/webhook/salesmyrep';
-        const WEBHOOK_KOMPLAIN = 'https://n8n.aleshatour.my.id/webhook/komplain';
+        // ── POPUP PILIHAN ──
+        const overlay    = document.getElementById('modal-overlay');
+        const stepPilih  = document.getElementById('step-pilih');
+        const stepBantuan = document.getElementById('step-bantuan');
 
-        const sessionPaket    = 'paket_'    + Math.random().toString(36).substring(7);
-        const sessionKomplain = 'komplain_' + Math.random().toString(36).substring(7);
-        const historyKomplain = [];
-
-        // Close buttons
-        document.querySelectorAll('.close-chat').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.getElementById(btn.dataset.target).classList.remove('show');
-            });
-        });
-        // Toggle (tutup yang lain)
-        document.getElementById('btn-paket').addEventListener('click', () => {
-            document.getElementById('win-komplain').classList.remove('show');
-            document.getElementById('win-paket').classList.toggle('show');
-        });
-        document.getElementById('btn-komplain').addEventListener('click', () => {
-            document.getElementById('win-paket').classList.remove('show');
-            document.getElementById('win-komplain').classList.toggle('show');
-        });
-
-        // Helpers
-        function addMsg(id, text, type) {
-            const box = document.getElementById(id);
-            const d = document.createElement('div');
-            d.className = 'msg ' + type;
-            d.textContent = text;
-            box.appendChild(d);
-            box.scrollTop = box.scrollHeight;
+        function showStep(which) {
+            stepPilih.classList.toggle('active', which === 'pilih');
+            stepBantuan.classList.toggle('active', which === 'bantuan');
         }
-        function showTyping(id, tid) {
-            const box = document.getElementById(id);
-            const t = document.createElement('div');
-            t.className = 'typing'; t.id = tid;
-            t.innerHTML = '<span></span><span></span><span></span>';
-            box.appendChild(t); box.scrollTop = box.scrollHeight;
+        function openModal(step) {
+            showStep(step || 'pilih');
+            overlay.classList.add('show');
+            document.body.style.overflow = 'hidden';
         }
-        function hideTyping(tid) { const t = document.getElementById(tid); if (t) t.remove(); }
-        async function postWebhook(url, payload) {
-            const r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
-            return await r.json();
+        function closeModal() {
+            overlay.classList.remove('show');
+            document.body.style.overflow = '';
+            try { sessionStorage.setItem('mr_popup_seen', '1'); } catch (e) {}
         }
 
-        // Greetings
+        // Pilihan 1: Berlangganan baru -> arahkan ke halaman utama (daftar paket)
+        document.getElementById('choice-baru').addEventListener('click', () => {
+            closeModal();
+            if (location.pathname !== '/' && location.pathname !== '/index.html' && !location.pathname.endsWith('/')) {
+                location.href = '/#harga';
+            } else {
+                const t = document.getElementById('harga');
+                if (t) t.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        // Pilihan 2: Komplain / tagihan / info lainnya
+        document.getElementById('choice-bantuan').addEventListener('click', () => showStep('bantuan'));
+        document.getElementById('btn-back').addEventListener('click', () => showStep('pilih'));
+        document.getElementById('modal-close').addEventListener('click', closeModal);
+        overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // Link "Pusat Bantuan" di navbar / FAQ langsung membuka info bantuan
+        document.querySelectorAll('[data-open-bantuan]').forEach(el => {
+            el.addEventListener('click', e => { e.preventDefault(); openModal('bantuan'); });
+        });
+
+        // Tampilkan popup saat halaman pertama kali dibuka (sekali per sesi)
         window.addEventListener('load', () => {
-            setTimeout(() => addMsg('msg-paket',
-                'Halo! Tanya apa saja soal paket internet MyRepublic — harga, kecepatan, cara berlangganan, atau promo 😊', 'bot'), 400);
-            setTimeout(() => addMsg('msg-komplain',
-                'Halo! Saya asisten keluhan MyRepublic 🙏 Ceritakan masalah Anda — saya akan bantu selesaikan langsung di sini.', 'bot'), 400);
+            let seen = false;
+            try { seen = sessionStorage.getItem('mr_popup_seen') === '1'; } catch (e) {}
+            if (!seen) setTimeout(() => openModal('pilih'), 400);
         });
-
-        // Chat Paket
-        document.getElementById('send-paket').addEventListener('click', sendPaket);
-        document.getElementById('input-paket').addEventListener('keydown', e => { if (e.key === 'Enter') sendPaket(); });
-        async function sendPaket() {
-            const inp = document.getElementById('input-paket');
-            const txt = inp.value.trim(); if (!txt) return;
-            addMsg('msg-paket', txt, 'user'); inp.value = '';
-            showTyping('msg-paket', 'tp-paket');
-            try {
-                const d = await postWebhook(WEBHOOK_PAKET, { type:'tanya_paket', message:txt, chatId:sessionPaket });
-                hideTyping('tp-paket');
-                addMsg('msg-paket', d.reply || d.output || d.message || 'Tim kami akan segera membalas!', 'bot');
-            } catch { hideTyping('tp-paket'); addMsg('msg-paket', 'Maaf, koneksi bermasalah. Silakan coba kembali.', 'bot'); }
-        }
-
-        // Chat Komplain
-        document.getElementById('send-komplain').addEventListener('click', sendKomplain);
-        document.getElementById('input-komplain').addEventListener('keydown', e => { if (e.key === 'Enter') sendKomplain(); });
-        async function sendKomplain() {
-            const inp = document.getElementById('input-komplain');
-            const txt = inp.value.trim(); if (!txt) return;
-            addMsg('msg-komplain', txt, 'user');
-            historyKomplain.push({ role:'user', content:txt });
-            inp.value = '';
-            showTyping('msg-komplain', 'tp-komplain');
-            try {
-                const d = await postWebhook(WEBHOOK_KOMPLAIN, {
-                    type:'komplain', message:txt, chatId:sessionKomplain, history:historyKomplain, fcr_context:true
-                });
-                hideTyping('tp-komplain');
-                const reply = d.reply || d.output || d.message || 'Pesan Anda sudah kami terima. Mohon tunggu sebentar.';
-                addMsg('msg-komplain', reply, 'bot');
-                historyKomplain.push({ role:'assistant', content:reply });
-            } catch { hideTyping('tp-komplain'); addMsg('msg-komplain', 'Maaf, koneksi bermasalah. Silakan coba kembali.', 'bot'); }
-        }
     </script>
-
-    <!-- FAQ styles -->
-    <style>
-        .faq-item { background:var(--navy); border:1px solid var(--border-soft); border-radius:12px; overflow:hidden; }
-        .faq-q { padding:18px 22px; font-size:15px; font-weight:600; color:#fff; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:14px; user-select:none; }
-        .faq-q:hover { color:var(--accent2); }
-        .faq-arrow { font-size:18px; color:var(--accent); transition:transform .3s; flex-shrink:0; }
-        .faq-item.open .faq-arrow { transform:rotate(45deg); }
-        .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-        .faq-item.open .faq-a { max-height:200px; }
-        .faq-a p { padding:0 22px 18px; font-size:14px; color:var(--text-muted); line-height:1.8; }
-    </style>
 </body>
 </html>
